@@ -2212,14 +2212,26 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616675397}
+        m_TargetAssemblyTypeName: Pan, Assembly-CSharp
+        m_MethodName: OnMousePan
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: da36c068-fb97-466d-aa1e-675b7633e6fa
     m_ActionName: Player/MousePan[/Mouse/rightButton,/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1616675396}
-        m_TargetAssemblyTypeName: CameraZoom, Assembly-CSharp
-        m_MethodName: OnZoom
+        m_TargetAssemblyTypeName: Zoom, Assembly-CSharp
+        m_MethodName: OnMouseZoom
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2232,7 +2244,19 @@ MonoBehaviour:
     m_ActionId: d7941c1a-b89b-4098-95cc-a34571cfde8e
     m_ActionName: Player/MouseZoom[/Mouse/scroll]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616675397}
+        m_TargetAssemblyTypeName: Pan, Assembly-CSharp
+        m_MethodName: OnMousePan
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3deca3ad-f242-4e9b-b77c-1826076ae475
     m_ActionName: Player/TouchPan
   - m_PersistentCalls:
@@ -5418,6 +5442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1616675395}
+  - component: {fileID: 1616675397}
   - component: {fileID: 1616675396}
   m_Layer: 0
   m_Name: CameraController
@@ -5456,7 +5481,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 137004421}
   zoomSpeed: 5
-  xAngle: 45
+--- !u!114 &1616675397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616675394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca74f286d79eb4243b18f959430e1dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 137004421}
+  panSpeed: 5
 --- !u!1001 &1636518503
 PrefabInstance:
   m_ObjectHideFlags: 0
