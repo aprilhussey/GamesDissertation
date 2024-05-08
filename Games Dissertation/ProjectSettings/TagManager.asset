@@ -8,6 +8,8 @@ TagManager:
   - TileLight
   - CheckerDark
   - CheckerLight
+  - KingCheckerDark
+  - KingCheckerLight
   layers:
   - Default
   - TransparentFX
