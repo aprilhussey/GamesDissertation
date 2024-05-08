@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - DarkTiles
-  - LightTiles
-  - DarkCheckers
-  - LightCheckers
+  - TileDark
+  - TileLight
+  - CheckerDark
+  - CheckerLight
   layers:
   - Default
   - TransparentFX

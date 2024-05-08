@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -331,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -463,7 +463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -525,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -683,7 +683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -947,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1009,7 +1009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1071,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1137,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1199,7 +1199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1371,7 +1371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -1523,7 +1523,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -1585,7 +1585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -1647,7 +1647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1705,7 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 310116244}
   m_Layer: 0
-  m_Name: LightCheckers
+  m_Name: Checkers Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1846,7 +1846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1908,7 +1908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1974,7 +1974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -2036,7 +2036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2136,7 +2136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2324,7 +2324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -2386,7 +2386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -2448,7 +2448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2514,7 +2514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2576,7 +2576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2638,7 +2638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -2700,7 +2700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2762,7 +2762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2828,7 +2828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2894,7 +2894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2994,7 +2994,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3056,7 +3056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3118,7 +3118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3184,7 +3184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3250,7 +3250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -3312,7 +3312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3370,7 +3370,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3502,7 +3502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3568,7 +3568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -3630,7 +3630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3696,7 +3696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -3754,7 +3754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 923460541}
   m_Layer: 0
-  m_Name: BoardFrame
+  m_Name: Board Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3797,7 +3797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3859,7 +3859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3921,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3983,7 +3983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4049,7 +4049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4209,7 +4209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4271,7 +4271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4333,7 +4333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4395,7 +4395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4457,7 +4457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4519,7 +4519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4581,7 +4581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4643,7 +4643,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4705,7 +4705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4767,7 +4767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4829,7 +4829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4895,7 +4895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4957,7 +4957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5057,7 +5057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -5119,7 +5119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5181,7 +5181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5247,7 +5247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5309,7 +5309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5371,7 +5371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5437,7 +5437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5569,7 +5569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -5631,7 +5631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5691,7 +5691,7 @@ GameObject:
   - component: {fileID: 1616675397}
   - component: {fileID: 1616675396}
   m_Layer: 0
-  m_Name: CameraController
+  m_Name: Camera Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5821,7 +5821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5887,7 +5887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -5949,7 +5949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -6007,7 +6007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748041990}
   m_Layer: 0
-  m_Name: LightTiles
+  m_Name: Tiles Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6074,7 +6074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6140,7 +6140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6202,7 +6202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6264,7 +6264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6326,7 +6326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6392,7 +6392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6458,7 +6458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6524,7 +6524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6590,7 +6590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6652,7 +6652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6714,7 +6714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1967365911}
   m_Layer: 0
-  m_Name: DarkTiles
+  m_Name: Tiles Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6781,7 +6781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: LightCheckers
+      value: CheckerLight
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -6843,7 +6843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: LightTiles
+      value: TileLight
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6901,7 +6901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2015706660}
   m_Layer: 0
-  m_Name: DarkCheckers
+  m_Name: Checkers Dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6948,7 +6948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_TagString
-      value: DarkCheckers
+      value: CheckerDark
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -7010,7 +7010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7076,7 +7076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7142,7 +7142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_TagString
-      value: DarkTiles
+      value: TileDark
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
