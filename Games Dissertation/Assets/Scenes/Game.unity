@@ -136,6 +136,10 @@ PrefabInstance:
       value: board_tile_A (30)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -263,6 +267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -320,6 +328,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -384,6 +396,10 @@ PrefabInstance:
       value: board_tile_A (40)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -445,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -502,6 +522,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -656,6 +680,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -918,6 +946,10 @@ PrefabInstance:
       value: board_tile_A (34)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -976,6 +1008,10 @@ PrefabInstance:
       value: board_tile_A (53)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -1032,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1096,6 +1136,10 @@ PrefabInstance:
       value: board_tile_A (6)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -1152,6 +1196,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1321,6 +1369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1469,6 +1521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2015706660}
     m_Modifications:
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1527,6 +1583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1584,6 +1644,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1781,6 +1845,10 @@ PrefabInstance:
       value: board_tile_A (26)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -1837,6 +1905,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1900,6 +1972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1957,6 +2033,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2053,6 +2133,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2238,6 +2322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2296,6 +2384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2353,6 +2445,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2417,6 +2513,10 @@ PrefabInstance:
       value: board_tile_A (45)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2475,6 +2575,10 @@ PrefabInstance:
       value: board_tile_A (41)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2531,6 +2635,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -2591,6 +2699,10 @@ PrefabInstance:
       value: board_tile_A (9)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2647,6 +2759,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2711,6 +2827,10 @@ PrefabInstance:
       value: board_tile_A (15)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2771,6 +2891,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2869,6 +2993,10 @@ PrefabInstance:
       value: board_tile_A (46)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2927,6 +3055,10 @@ PrefabInstance:
       value: board_tile_A (18)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -2983,6 +3115,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3047,6 +3183,10 @@ PrefabInstance:
       value: board_tile_A (28)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -3108,6 +3248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3167,6 +3311,10 @@ PrefabInstance:
       value: board_tile_A (38)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -3220,6 +3368,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1967365911}
     m_Modifications:
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
@@ -3349,6 +3501,10 @@ PrefabInstance:
       value: board_tile_A (51)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -3410,6 +3566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -3467,6 +3627,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3529,6 +3693,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -3628,6 +3796,10 @@ PrefabInstance:
       value: board_tile_A (49)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -3684,6 +3856,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3744,6 +3920,10 @@ PrefabInstance:
       value: board_tile_A (33)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -3800,6 +3980,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3862,6 +4046,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4019,6 +4207,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4078,6 +4270,10 @@ PrefabInstance:
       value: board_tile_A (29)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4134,6 +4330,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4193,6 +4393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4250,6 +4454,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4310,6 +4518,10 @@ PrefabInstance:
       value: board_tile_A (21)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4368,6 +4580,10 @@ PrefabInstance:
       value: board_tile_A (42)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4424,6 +4640,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4484,6 +4704,10 @@ PrefabInstance:
       value: board_tile_A (10)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4540,6 +4764,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -4598,6 +4826,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4662,6 +4894,10 @@ PrefabInstance:
       value: board_tile_A (58)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4718,6 +4954,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4815,6 +5055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4874,6 +5118,10 @@ PrefabInstance:
       value: board_tile_A (50)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -4930,6 +5178,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4994,6 +5246,10 @@ PrefabInstance:
       value: board_tile_A (5)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -5052,6 +5308,10 @@ PrefabInstance:
       value: board_tile_A (57)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -5108,6 +5368,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5170,6 +5434,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5299,6 +5567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5356,6 +5628,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5544,6 +5820,10 @@ PrefabInstance:
       value: board_tile_A (32)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -5605,6 +5885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5662,6 +5946,10 @@ PrefabInstance:
     - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_Name
       value: checker (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
       objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
@@ -5785,6 +6073,10 @@ PrefabInstance:
       value: board_tile_A (35)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -5847,6 +6139,10 @@ PrefabInstance:
       value: board_tile_A (25)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -5903,6 +6199,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5963,6 +6263,10 @@ PrefabInstance:
       value: board_tile_A (22)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -6019,6 +6323,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6083,6 +6391,10 @@ PrefabInstance:
       value: board_tile_A (16)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -6143,6 +6455,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6207,6 +6523,10 @@ PrefabInstance:
       value: board_tile_A (59)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -6269,6 +6589,10 @@ PrefabInstance:
       value: board_tile_A (62)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -6325,6 +6649,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6451,6 +6779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: LightCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -6508,6 +6840,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: LightTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6610,6 +6946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: checker (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1433940158306448, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
+      propertyPath: m_TagString
+      value: DarkCheckers
+      objectReference: {fileID: 0}
     - target: {fileID: 4415877424991538, guid: 40a834f4e1bcfa24abc7fafbc273f058, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -6667,6 +7007,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6731,6 +7075,10 @@ PrefabInstance:
       value: board_tile_A (7)
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4
       objectReference: {fileID: 0}
@@ -6791,6 +7139,10 @@ PrefabInstance:
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_Name
       value: board_tile_A (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
+      propertyPath: m_TagString
+      value: DarkTiles
       objectReference: {fileID: 0}
     - target: {fileID: 1154557512925340, guid: d61029d578cf577468a601468ec147af, type: 3}
       propertyPath: m_StaticEditorFlags
