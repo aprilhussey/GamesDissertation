@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6507257216158386544}
   m_Layer: 0
-  m_Name: kingChecker_Dark
+  m_Name: kingChecker_black
   m_TagString: KingCheckerDark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

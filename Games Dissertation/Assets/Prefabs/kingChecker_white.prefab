@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522675180769115882}
   m_Layer: 0
-  m_Name: kingChecker_Light
+  m_Name: kingChecker_white
   m_TagString: KingCheckerLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
