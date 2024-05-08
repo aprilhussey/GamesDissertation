@@ -9,15 +9,18 @@ public class Zoom : MonoBehaviour
 	private GameObject mainCamera;
 
 	[SerializeField]
-	private float zoomSpeed = 10f;
+	private float zoomSpeed = 5f;
 
-	[SerializeField]
-	private float xAngle = 45f;
-	private float yAngle = 0f;
-	private float zAngle = 0f;
+	private float xAngle;
+	private float yAngle;
+	private float zAngle;
 
 	private void Awake()
 	{
+		xAngle = mainCamera.transform.rotation.eulerAngles.x;
+		yAngle = mainCamera.transform.rotation.eulerAngles.y;
+		zAngle = mainCamera.transform.rotation.eulerAngles.z;
+
 		mainCamera.transform.rotation = Quaternion.Euler(xAngle, yAngle, zAngle);
 	}
 
