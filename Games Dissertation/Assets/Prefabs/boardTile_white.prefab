@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450fa7f43499ce14c91516d34d40a20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileColor: 1
+  boardTileColor: 1
 --- !u!33 &7550481378397145812
 MeshFilter:
   m_ObjectHideFlags: 0

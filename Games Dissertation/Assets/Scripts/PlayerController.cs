@@ -28,7 +28,10 @@ public class PlayerController : MonoBehaviour
 				currentTile = hitTile;
 				checkerToMove = currentTile.GetComponentInChildren<Checker>().gameObject;
 			}
-			else if (hitTile != null && checkerToMove != null && !hitTile.GetComponentInChildren<Checker>())
+			else if (hitTile != null 
+				&& checkerToMove != null 
+				&& !hitTile.GetComponentInChildren<Checker>()
+				&& hitTile.GetComponentInChildren<BoardTile>().GetBoardTileColor != BoardTile.BoardTileColor.white)
 			{
 				tileToMoveTo = hitTile;
 
