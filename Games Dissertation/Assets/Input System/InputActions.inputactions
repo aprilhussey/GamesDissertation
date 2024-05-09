@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "MouseSelect",
+                    "type": "Button",
+                    "id": "df5f0c12-875f-41bd-9aa8-7c24ba7e62df",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "TouchPan",
                     "type": "PassThrough",
                     "id": "3deca3ad-f242-4e9b-b77c-1826076ae475",
@@ -40,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TouchSelect",
+                    "type": "PassThrough",
+                    "id": "69c952fd-115a-477e-b850-08aa11761711",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -106,6 +124,28 @@
                     "processors": "",
                     "groups": "Mouse",
                     "action": "MouseZoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51b0c0d6-fd82-409b-8bff-6597ff272f09",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "TouchSelect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "730e3c6b-e5b3-4b67-9592-ad638d7db84a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "MouseSelect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

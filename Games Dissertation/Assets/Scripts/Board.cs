@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-	private List<List<Tile>> board = new List<List<Tile>>();
+	private List<List<Tile>> boardList = new List<List<Tile>>();
 
 	void Awake()
 	{
@@ -14,30 +14,54 @@ public class Board : MonoBehaviour
 
 			if (row != null)
 			{
-				board.Add(row.GetRow);
+				boardList.Add(row.GetRow);
 			}
 		}
 	}
 
-	public List<List<Tile>> GetBoard
+	public List<List<Tile>> GetBoardList
 	{
-		get { return board; }
+		get { return boardList; }
 	}
 
-	void MoveChecker((int, int) originalPosition, (int, int) newPosition)
+	public void MoveCheckerWithTiles(Tile currentTile, Tile newTile)
 	{
-		GameObject currentTile = board[originalPosition.Item1][originalPosition.Item2].gameObject;
+		(int, int) currentTilePosition = FindTilePosition(currentTile);
+		(int, int) newTilePosition = FindTilePosition(newTile);
+		MoveChecker(currentTilePosition, newTilePosition);
+	}
+
+	public (int, int) FindTilePosition(Tile tile)
+	{
+		for (int i = 0; i < boardList.Count; i++)
+		{
+			for (int j = 0; j < boardList[i].Count; j++)
+			{
+				if (boardList[i][j] == tile)
+				{
+					return (i, j);
+				}
+			}
+		}
+		return (-1, -1);
+	}
+
+	public void MoveChecker((int, int) originalPosition, (int, int) newPosition)
+	{
+		GameObject currentTile = boardList[originalPosition.Item1][originalPosition.Item2].gameObject;
 		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject();
-		GameObject tileToMoveTo = board[newPosition.Item1][newPosition.Item2].gameObject;
+		GameObject tileToMoveTo = boardList[newPosition.Item1][newPosition.Item2].gameObject;
 
 		checkerToMove.transform.SetParent(tileToMoveTo.transform);
+		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
+
 		currentTile.GetComponent<Tile>().NullCheckerObject();
 		tileToMoveTo.GetComponent<Tile>().SetCheckerObject();
 	}
 
-	void RemoveChecker((int, int) position)
+	public void RemoveChecker((int, int) position)
 	{
-		Destroy(board[position.Item1][position.Item2].GetCheckerObject());
-		board[position.Item1][position.Item2].NullCheckerObject();
+		Destroy(boardList[position.Item1][position.Item2].GetCheckerObject());
+		boardList[position.Item1][position.Item2].NullCheckerObject();
 	}
 }
