@@ -23,4 +23,21 @@ public class Board : MonoBehaviour
 	{
 		get { return board; }
 	}
+
+	void MoveChecker((int, int) originalPosition, (int, int) newPosition)
+	{
+		GameObject currentTile = board[originalPosition.Item1][originalPosition.Item2].gameObject;
+		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject();
+		GameObject tileToMoveTo = board[newPosition.Item1][newPosition.Item2].gameObject;
+
+		checkerToMove.transform.SetParent(tileToMoveTo.transform);
+		currentTile.GetComponent<Tile>().NullCheckerObject();
+		tileToMoveTo.GetComponent<Tile>().SetCheckerObject();
+	}
+
+	void RemoveChecker((int, int) position)
+	{
+		Destroy(board[position.Item1][position.Item2].GetCheckerObject());
+		board[position.Item1][position.Item2].NullCheckerObject();
+	}
 }
