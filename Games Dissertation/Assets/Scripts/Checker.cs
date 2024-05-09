@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Checker : MonoBehaviour
 {
-	private enum CheckerColor
+	public enum CheckerColor
 	{
 		black,
 		white
@@ -15,4 +15,15 @@ public class Checker : MonoBehaviour
 
 	[SerializeField]
 	private bool king;
+
+    public CheckerColor GetCheckerColor
+	{
+		get { return checkerColor; }
+	}
+
+	public bool King
+	{
+		get { return king; }
+		set { king = value; }
+	}
 }

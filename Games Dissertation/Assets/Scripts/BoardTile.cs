@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Checker;
 
 public class BoardTile : MonoBehaviour
 {
-    private enum BoardTileColor
+    public enum BoardTileColor
     {
         black,
         white
@@ -12,4 +13,9 @@ public class BoardTile : MonoBehaviour
 
     [SerializeField]
     private BoardTileColor boardTileColor;
+
+	public BoardTileColor GetBoardTileColor
+	{
+		get { return boardTileColor; }
+	}
 }
