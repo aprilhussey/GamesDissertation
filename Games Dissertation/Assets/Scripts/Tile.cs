@@ -24,4 +24,12 @@ public class Tile : MonoBehaviour
 			checkerObject = this.GetComponentInChildren<Checker>().gameObject;
 		}
 	}
+
+	public void NullCheckerObject()
+	{
+		if (checkerObject != null)
+		{
+			checkerObject = null;
+		}
+	}
 }
