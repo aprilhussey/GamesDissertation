@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Row : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private List<Tile> row = new List<Tile>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	void Awake()
+	{
+		 foreach (Transform child in this.transform)
+		{
+			Tile tile = child.GetComponent<Tile>();
+
+            if (tile != null)
+			{ 
+				row.Add(tile);
+            }
+        }
+	}
+
+	public List<Tile> GetRow
+	{
+		get { return row; }
+	}
 }
