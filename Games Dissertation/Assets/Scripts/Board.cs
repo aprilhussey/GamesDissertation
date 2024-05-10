@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -63,5 +64,94 @@ public class Board : MonoBehaviour
 	{
 		Destroy(boardList[position.Item1][position.Item2].GetCheckerObject());
 		boardList[position.Item1][position.Item2].NullCheckerObject();
+	}
+
+	public bool IsValidMove(Tile currentTile, Tile newTile)
+	{
+		if (TileIsNotWhite(newTile))
+		{
+			if (TileDoesNotContainChecker(newTile))
+			{
+				if (currentTile.GetComponentInChildren<Checker>().King == false)
+				{
+					if (TileIsForwardRelative(currentTile, newTile))
+					{
+						if (TileIsDiagonal(currentTile, newTile))
+						{
+							return true;
+						}
+						else { return false; }
+					}
+					else { return false; }
+				}
+				else if (currentTile.GetComponentInChildren<Checker>().King == true)
+				{
+					if (TileIsDiagonal(currentTile, newTile))
+					{
+						return true;
+					}
+					else { return false; }
+				}
+				else { return false; }
+			}
+			else { return false; }
+		}
+		else { return false; }
+	}
+
+	private bool TileIsNotWhite(Tile tile)
+	{
+		if (tile.GetComponentInChildren<BoardTile>().GetBoardTileColor != BoardTile.BoardTileColor.white)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	private bool TileDoesNotContainChecker(Tile tile)
+	{
+		if (tile.GetComponentInChildren<Checker>() == null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	private bool TileIsForwardRelative(Tile currentTile, Tile newTile)
+	{
+		(int x, int y) currentTilePosition = FindTilePosition(currentTile);
+		(int x, int y) newTilePosition = FindTilePosition(newTile);
+
+		bool isForwardRelative;
+
+		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.white)
+		{
+			return isForwardRelative = currentTilePosition.y < newTilePosition.y;
+		}
+		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.black)
+		{
+			return isForwardRelative = currentTilePosition.y > newTilePosition.y;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	private bool TileIsDiagonal(Tile currentTile, Tile newTile)
+	{
+		(int x, int y) currentTilePosition = FindTilePosition(currentTile);
+		(int x, int y) newTilePosition = FindTilePosition(newTile);
+
+		int xDiagonal = Math.Abs(currentTilePosition.x - newTilePosition.x);
+		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
+
+		return xDiagonal == yDiagonal;
 	}
 }
