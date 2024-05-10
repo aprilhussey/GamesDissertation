@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44824904, g: 0.49827605, b: 0.57558316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482482, g: 0.49827528, b: 0.5755823, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3612,6 +3612,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850f35259de6095469a99e48adc8d9ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chessBoardBlack: {fileID: 2100000, guid: c27fa28ae54255a49b61504f22d38399, type: 2}
+  tileHighlight: {fileID: 2100000, guid: 6543d139d036e774db68ce7149fb7791, type: 2}
 --- !u!1 &678405430
 GameObject:
   m_ObjectHideFlags: 0

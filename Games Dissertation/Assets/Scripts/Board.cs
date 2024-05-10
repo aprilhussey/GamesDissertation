@@ -7,6 +7,12 @@ public class Board : MonoBehaviour
 {
 	private List<List<Tile>> boardList = new List<List<Tile>>();
 
+	[SerializeField]
+	private Material chessBoardBlack;
+
+	[SerializeField]
+	private Material tileHighlight;
+
 	void Awake()
 	{
 		foreach (Transform child in this.transform)
@@ -153,5 +159,36 @@ public class Board : MonoBehaviour
 		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
 
 		return xDiagonal == yDiagonal;
+	}
+
+	public void HighlightTile(Tile tile)
+	{
+		BoardTile boardTile = tile.GetComponentInChildren<BoardTile>();
+		Renderer renderer = boardTile.GetComponent<Renderer>();
+
+		if (renderer != null)
+		{
+			boardTile.Highlighted = true;
+			renderer.material = tileHighlight;
+		}
+	}
+
+	public void RemoveHighlightFromTiles()
+	{
+		BoardTile[] boardTiles = FindObjectsOfType<BoardTile>();
+
+		foreach (BoardTile boardTile in boardTiles)
+		{
+			if (boardTile.Highlighted)
+			{
+				Renderer renderer = boardTile.GetComponent<Renderer>();
+
+				if (renderer != null)
+				{
+					boardTile.Highlighted = false;
+					renderer.material = chessBoardBlack;
+				}
+			}
+		}
 	}
 }
