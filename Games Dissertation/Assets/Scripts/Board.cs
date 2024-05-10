@@ -138,11 +138,11 @@ public class Board : MonoBehaviour
 
 		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.white)
 		{
-			return isForwardRelative = currentTilePosition.y < newTilePosition.y;
+			return isForwardRelative = currentTilePosition.x > newTilePosition.x;
 		}
 		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.black)
 		{
-			return isForwardRelative = currentTilePosition.y > newTilePosition.y;
+			return isForwardRelative = currentTilePosition.x < newTilePosition.x;
 		}
 		else
 		{
