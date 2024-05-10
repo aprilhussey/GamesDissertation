@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -161,7 +162,12 @@ public class Board : MonoBehaviour
 		return xDiagonal == yDiagonal;
 	}
 
-	public void HighlightTile(Tile tile)
+	public bool BoardTileIsHighlighted(Tile tile)
+	{
+		return tile.GetComponentInChildren<BoardTile>().Highlighted;
+	}
+
+	public void HighlightBoardTile(Tile tile)
 	{
 		BoardTile boardTile = tile.GetComponentInChildren<BoardTile>();
 		Renderer renderer = boardTile.GetComponent<Renderer>();
@@ -173,7 +179,7 @@ public class Board : MonoBehaviour
 		}
 	}
 
-	public void RemoveHighlightFromTiles()
+	public void RemoveHighlightFromBoardTiles()
 	{
 		BoardTile[] boardTiles = FindObjectsOfType<BoardTile>();
 

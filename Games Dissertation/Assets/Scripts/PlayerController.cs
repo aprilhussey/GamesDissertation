@@ -41,25 +41,25 @@ public class PlayerController : MonoBehaviour
 					{
 						if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
 						{
-							board.HighlightTile(tile);
+							board.HighlightBoardTile(tile);
 						}
 					}
 				}
 			}
-			else if (hitTile != null 
-				&& checkerObjectToMove != null 
-				&& !hitTile.GetComponentInChildren<Checker>()
-				&& hitTile.GetComponentInChildren<BoardTile>().GetBoardTileColor != BoardTile.BoardTileColor.white)
+			else if (hitTile != null && checkerObjectToMove != null)
 			{
 				tileObjectToMoveTo = hitTile;
 
-				board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
-				
-				currentTileObject = null;
-				checkerObjectToMove = null;
-				tileObjectToMoveTo = null;
+				if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
+				{
+					board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
 
-				board.RemoveHighlightFromTiles();
+					currentTileObject = null;
+					checkerObjectToMove = null;
+					tileObjectToMoveTo = null;
+
+					board.RemoveHighlightFromBoardTiles();
+				}
 			}
 		}
 	}
