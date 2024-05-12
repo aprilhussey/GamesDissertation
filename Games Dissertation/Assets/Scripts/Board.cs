@@ -147,17 +147,6 @@ public class Board : MonoBehaviour
 		}
 	}
 
-	private bool TileIsDiagonal(Tile currentTile, Tile newTile)
-	{
-		(int y, int x) currentTilePosition = FindTilePosition(currentTile);
-		(int y, int x) newTilePosition = FindTilePosition(newTile);
-
-		int xDiagonal = Math.Abs(currentTilePosition.x - newTilePosition.x);
-		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
-
-		return xDiagonal == yDiagonal;
-	}
-
 	private bool TileIsValidDiagonalMove(Tile currentTile, Tile newTile)
 	{
 		(int y, int x) currentTilePosition = FindTilePosition(currentTile);
@@ -176,7 +165,7 @@ public class Board : MonoBehaviour
 			// Check if move is two tiles away and there is a checker to hop over
 			else if (yDiagonal == 2)
 			{
-				Tile middleTile = boardList[(currentTilePosition.y + newTilePosition.y) / 2][(currentTilePosition.x + newTilePosition.x / 2)];
+				Tile middleTile = boardList[(currentTilePosition.y + newTilePosition.y) / 2][(currentTilePosition.x + newTilePosition.x) / 2];
 				if (middleTile.GetComponentInChildren<Checker>() != null)
 				{
 					return true;
