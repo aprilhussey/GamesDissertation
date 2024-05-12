@@ -153,7 +153,7 @@ public class Board : MonoBehaviour
 		}
 	}
 
-	private bool TileIsValidDiagonalMove(Tile currentTile, Tile newTile)
+	public bool TileIsValidDiagonalMove(Tile currentTile, Tile newTile)
 	{
 		(int y, int x) currentTilePosition = FindTilePosition(currentTile);
 		(int y, int x) newTilePosition = FindTilePosition(newTile);
@@ -183,6 +183,28 @@ public class Board : MonoBehaviour
 			}
 		}
 		return false;
+	}
+
+	public void HoppedChecker(Tile currentTile, Tile newTile)
+	{
+		(int y, int x) currentTilePosition = FindTilePosition(currentTile);
+		(int y, int x) newTilePosition = FindTilePosition(newTile);
+
+		int xDiagonal = Math.Abs(currentTilePosition.x - newTilePosition.x);
+		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
+
+		if (xDiagonal == yDiagonal)
+		{
+			// Check if move is two tiles away and there is a checker to hop over
+			if (yDiagonal == 2)
+			{
+				Tile middleTile = boardList[(currentTilePosition.y + newTilePosition.y) / 2][(currentTilePosition.x + newTilePosition.x) / 2];
+				if (middleTile.GetComponentInChildren<Checker>() != null)
+				{
+					RemoveChecker(FindTilePosition(middleTile));
+				}
+			}
+		}
 	}
 
 	public bool BoardTileIsHighlighted(Tile tile)

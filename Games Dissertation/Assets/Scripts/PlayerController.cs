@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
 				if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
 				{
 					board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
+					board.HoppedChecker(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
 
 					ResetVariables();
 				}
