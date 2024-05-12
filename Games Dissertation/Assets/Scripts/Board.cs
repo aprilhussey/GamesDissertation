@@ -22,7 +22,7 @@ public class Board : MonoBehaviour
 
 			if (row != null)
 			{
-				boardList.Add(row.GetRow);
+				boardList.Insert(0, row.GetRow);	// Inserts new row at the beginning of the list
 			}
 		}
 	}
@@ -135,11 +135,11 @@ public class Board : MonoBehaviour
 
 		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.white)
 		{
-			return isForwardRelative = currentTilePosition.x > newTilePosition.x;
+			return isForwardRelative = currentTilePosition.x < newTilePosition.x;
 		}
 		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.black)
 		{
-			return isForwardRelative = currentTilePosition.x < newTilePosition.x;
+			return isForwardRelative = currentTilePosition.x > newTilePosition.x;
 		}
 		else
 		{
