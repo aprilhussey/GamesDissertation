@@ -48,21 +48,19 @@ public class PlayerController : MonoBehaviour
 					}
 				}
 			}
+			else if (hitTile == currentTileObject && checkerObjectToMove != null)
+			{
+				ResetVariables();
+			}
 			else if (hitTile != null && checkerObjectToMove != null)
 			{
 				tileObjectToMoveTo = hitTile;
 
 				if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
 				{
-					board.RemoveHighlightFromChecker();
 					board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
 
-					currentTileObject = null;
-					checkerObjectToMove = null;
-					tileObjectToMoveTo = null;
-
-					board.RemoveHighlightFromBoardTiles();
-					board.RemoveHighlightFromChecker();
+					ResetVariables();
 				}
 			}
 		}
@@ -71,5 +69,15 @@ public class PlayerController : MonoBehaviour
 	public void OnTouchSelect(InputAction.CallbackContext context)
 	{
 		if (!context.performed) return;
+	}
+
+	private void ResetVariables()
+	{
+		currentTileObject = null;
+		checkerObjectToMove = null;
+		tileObjectToMoveTo = null;
+
+		board.RemoveHighlightFromBoardTiles();
+		board.RemoveHighlightFromChecker();
 	}
 }
