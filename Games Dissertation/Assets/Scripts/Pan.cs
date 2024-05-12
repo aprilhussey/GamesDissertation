@@ -15,7 +15,7 @@ public class Pan : MonoBehaviour
 	{
 		Vector2 delta = context.ReadValue<Vector2>();
 
-		Vector3 movement = new Vector3(-delta.x, 0, -delta.y) * panSpeed * Time.deltaTime;  // Pan affects the x and z axis
+		Vector3 movement = new Vector3(delta.y, 0, -delta.x) * panSpeed * Time.deltaTime;  // Pan affects the x and z axis
 		this.transform.Translate(movement, Space.World);
 	}
 
