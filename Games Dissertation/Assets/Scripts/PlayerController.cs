@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
 				currentTileObject = hitTile;
 				checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
 
+				board.HighlightChecker(currentTileObject.GetComponent<Tile>());
+
 				foreach (List<Tile> row in board.GetBoardList)
 				{
 					foreach (Tile tile in row)
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
 				if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
 				{
+					board.RemoveHighlightFromChecker();
 					board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
 
 					currentTileObject = null;
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
 					tileObjectToMoveTo = null;
 
 					board.RemoveHighlightFromBoardTiles();
+					board.RemoveHighlightFromChecker();
 				}
 			}
 		}

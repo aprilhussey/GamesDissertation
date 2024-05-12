@@ -12,7 +12,13 @@ public class Board : MonoBehaviour
 	private Material chessBoardBlack;
 
 	[SerializeField]
-	private Material tileHighlight;
+	private Material chessFiguresBlack;
+
+	[SerializeField]
+	private Material chessFiguresWhite;
+
+	[SerializeField]
+	private Material highlight;
 
 	void Awake()
 	{
@@ -188,7 +194,7 @@ public class Board : MonoBehaviour
 		if (renderer != null)
 		{
 			boardTile.Highlighted = true;
-			renderer.material = tileHighlight;
+			renderer.material = highlight;
 		}
 	}
 
@@ -206,6 +212,45 @@ public class Board : MonoBehaviour
 				{
 					boardTile.Highlighted = false;
 					renderer.material = chessBoardBlack;
+				}
+			}
+		}
+	}
+
+	public void HighlightChecker(Tile tile)
+	{
+		Checker checker = tile.GetComponentInChildren<Checker>();
+		Renderer renderer = checker.GetComponent<Renderer>();
+
+		if (renderer != null)
+		{
+			checker.Highlighted = true;
+			renderer.material = highlight;
+		}
+	}
+
+	public void RemoveHighlightFromChecker()
+	{
+		Checker[] checkers = FindObjectsOfType<Checker>();
+
+		foreach (Checker checker in checkers)
+		{
+			if (checker.Highlighted)
+			{
+				Renderer renderer = checker.GetComponent<Renderer>();
+
+				if (renderer != null)
+				{
+					checker.Highlighted = false;
+
+					if (checker.GetCheckerColor == Checker.CheckerColor.black)
+					{
+						renderer.material = chessFiguresBlack;
+					}
+					else if (checker.GetCheckerColor == Checker.CheckerColor.white)
+					{
+						renderer.material = chessFiguresWhite;
+					}
 				}
 			}
 		}

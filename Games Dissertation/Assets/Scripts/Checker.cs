@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Checker : MonoBehaviour
@@ -16,7 +17,9 @@ public class Checker : MonoBehaviour
 	[SerializeField]
 	private bool king;
 
-    public CheckerColor GetCheckerColor
+	private bool highlighted = false;
+
+	public CheckerColor GetCheckerColor
 	{
 		get { return checkerColor; }
 	}
@@ -25,5 +28,11 @@ public class Checker : MonoBehaviour
 	{
 		get { return king; }
 		set { king = value; }
+	}
+
+	public bool Highlighted
+	{
+		get { return highlighted; }
+		set { highlighted = value; }
 	}
 }

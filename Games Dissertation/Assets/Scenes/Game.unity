@@ -3613,7 +3613,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chessBoardBlack: {fileID: 2100000, guid: c27fa28ae54255a49b61504f22d38399, type: 2}
-  tileHighlight: {fileID: 2100000, guid: 6543d139d036e774db68ce7149fb7791, type: 2}
+  chessFiguresBlack: {fileID: 2100000, guid: e181ad0b6f6c64a459c1a26119b14c2c, type: 2}
+  chessFiguresWhite: {fileID: 2100000, guid: c0165960283e5604ca3ddec04c50a367, type: 2}
+  highlight: {fileID: 2100000, guid: 6543d139d036e774db68ce7149fb7791, type: 2}
 --- !u!1 &678405430
 GameObject:
   m_ObjectHideFlags: 0
