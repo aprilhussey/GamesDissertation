@@ -174,7 +174,11 @@ public class Board : MonoBehaviour
 				Tile middleTile = boardList[(currentTilePosition.y + newTilePosition.y) / 2][(currentTilePosition.x + newTilePosition.x) / 2];
 				if (middleTile.GetComponentInChildren<Checker>() != null)
 				{
-					return true;
+					if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor
+						!= middleTile.GetComponentInChildren<Checker>().GetCheckerColor)
+					{
+						return true;
+					}
 				}
 			}
 		}
