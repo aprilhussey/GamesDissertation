@@ -51,6 +51,7 @@ public class Board : MonoBehaviour
 				}
 			}
 		}
+		Debug.LogError($"ERROR: Tile position not found");
 		return (-1, -1);
 	}
 
@@ -83,27 +84,22 @@ public class Board : MonoBehaviour
 				{
 					if (TileIsForwardRelative(currentTile, newTile))
 					{
-						if (TileIsDiagonal(currentTile, newTile))
+						if (TileIsValidDiagonalMove(currentTile, newTile))
 						{
 							return true;
 						}
-						else { return false; }
 					}
-					else { return false; }
 				}
 				else if (currentTile.GetComponentInChildren<Checker>().King == true)
 				{
-					if (TileIsDiagonal(currentTile, newTile))
+					if (TileIsValidDiagonalMove(currentTile, newTile))
 					{
 						return true;
 					}
-					else { return false; }
 				}
-				else { return false; }
 			}
-			else { return false; }
 		}
-		else { return false; }
+		return false;
 	}
 
 	private bool TileIsNotWhite(Tile tile)
@@ -160,6 +156,34 @@ public class Board : MonoBehaviour
 		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
 
 		return xDiagonal == yDiagonal;
+	}
+
+	private bool TileIsValidDiagonalMove(Tile currentTile, Tile newTile)
+	{
+		(int x, int y) currentTilePosition = FindTilePosition(currentTile);
+		(int x, int y) newTilePosition = FindTilePosition(newTile);
+
+		int xDiagonal = Math.Abs(currentTilePosition.x - newTilePosition.x);
+		int yDiagonal = Math.Abs(currentTilePosition.y - newTilePosition.y);
+
+		if (xDiagonal == yDiagonal)
+		{
+			// Check if move is only one tile away
+			if (xDiagonal == 1)
+			{
+				return true;
+			}
+			// Check if move is two tiles away and there is a checker to hop over
+			else if (xDiagonal == 2)
+			{
+				Tile middleTile = boardList[(currentTilePosition.x + newTilePosition.x) / 2][(currentTilePosition.y + newTilePosition.y / 2)];
+				if (middleTile.GetComponentInChildren<Checker>() != null)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public bool BoardTileIsHighlighted(Tile tile)
