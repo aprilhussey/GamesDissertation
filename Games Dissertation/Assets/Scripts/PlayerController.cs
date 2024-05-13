@@ -5,71 +5,95 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+	private PlayerInput playerInput;
+	private InputActionAsset inputActionAsset;
+	private InputActionMap playerActionMap;
+
+	private Vector2 screenPosition;
+
+	private Camera mainCamera;
+	private Board board;
+
 	private GameObject currentTileObject;
 	private GameObject checkerObjectToMove;
 
 	private GameObject tileObjectToMoveTo;
 
-	private Board board;
-
 	void Awake()
-	{
+    {
+		playerInput = this.GetComponent<PlayerInput>();
+
+		inputActionAsset = playerInput.actions;
+		playerActionMap = inputActionAsset.FindActionMap("Player");
+
+		inputActionAsset.Enable();
+
+		mainCamera = Camera.main;
 		board = FindObjectOfType<Board>();
 	}
 
-	public void OnMouseSelect(InputAction.CallbackContext context)
-	{
-		if (!context.performed) return;
+    void OnEnable()
+    {
+		playerActionMap["Press"].performed += OnPress;
+	}
 
-		Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+    void OnDisable()
+    {
+		playerActionMap["Press"].performed -= OnPress;
+	}
 
+	private void OnPress(InputAction.CallbackContext context)
+    {
+		screenPosition = playerActionMap["ScreenPosition"].ReadValue<Vector2>();
+		//Debug.Log($"Screen position: {screenPosition}");
+
+		Ray ray = mainCamera.ScreenPointToRay(screenPosition);
 		RaycastHit hit;
 
 		if (Physics.Raycast(ray, out hit))
 		{
-			GameObject hitTile = hit.transform.parent.gameObject;
-			Debug.Log($"Raycast hit: {hitTile.transform.name}");
-
-			if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
+			if (hit.transform.GetComponentInParent<Tile>() != null)
 			{
-				currentTileObject = hitTile;
-				checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
+				GameObject hitTile = hit.transform.GetComponentInParent<Tile>().gameObject;
 
-				board.HighlightChecker(currentTileObject.GetComponent<Tile>());
+				Debug.Log($"Raycast hit: {hitTile.transform.name}");
 
-				foreach (List<Tile> row in board.GetBoardList)
+				if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
 				{
-					foreach (Tile tile in row)
+					currentTileObject = hitTile;
+					checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
+
+					board.HighlightChecker(currentTileObject.GetComponent<Tile>());
+
+					foreach (List<Tile> row in board.GetBoardList)
 					{
-						if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
+						foreach (Tile tile in row)
 						{
-							board.HighlightBoardTile(tile);
+							if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
+							{
+								board.HighlightBoardTile(tile);
+							}
 						}
 					}
 				}
-			}
-			else if (hitTile == currentTileObject && checkerObjectToMove != null)
-			{
-				ResetVariables();
-			}
-			else if (hitTile != null && checkerObjectToMove != null)
-			{
-				tileObjectToMoveTo = hitTile;
-
-				if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
+				else if (hitTile == currentTileObject && checkerObjectToMove != null)
 				{
-					board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
-					board.HoppedChecker(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
-
 					ResetVariables();
+				}
+				else if (hitTile != null && checkerObjectToMove != null)
+				{
+					tileObjectToMoveTo = hitTile;
+
+					if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
+					{
+						board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
+						board.HoppedChecker(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
+
+						ResetVariables();
+					}
 				}
 			}
 		}
-	}
-
-	public void OnTouchSelect(InputAction.CallbackContext context)
-	{
-		if (!context.performed) return;
 	}
 
 	private void ResetVariables()
@@ -82,3 +106,4 @@ public class PlayerController : MonoBehaviour
 		board.RemoveHighlightFromChecker();
 	}
 }
+

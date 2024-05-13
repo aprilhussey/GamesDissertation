@@ -25,12 +25,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Player"",
-            ""id"": ""e583ee89-8583-4be2-a0ef-6ac325d1546f"",
+            ""id"": ""e44c86bd-7569-4ad0-aef0-806475995f03"",
             ""actions"": [
                 {
-                    ""name"": ""MousePan"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""da36c068-fb97-466d-aa1e-675b7633e6fa"",
+                    ""name"": ""Press"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1a5ba7c-d885-43b6-8b0f-1060e383c549"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -39,53 +39,79 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""MouseZoom"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""d7941c1a-b89b-4098-95cc-a34571cfde8e"",
+                    ""id"": ""fef6d7c8-5344-4068-bc1a-83ef9776f475"",
                     ""expectedControlType"": ""Delta"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MouseSelect"",
-                    ""type"": ""Button"",
-                    ""id"": ""df5f0c12-875f-41bd-9aa8-7c24ba7e62df"",
+                    ""name"": ""MousePan"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""8592c9b5-a6c5-49ae-8b8d-e049a3f4439e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""TouchPan"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""3deca3ad-f242-4e9b-b77c-1826076ae475"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""TouchZoom"",
+                    ""name"": ""ScreenPosition"",
                     ""type"": ""Value"",
-                    ""id"": ""4d08592d-e4f9-458b-a960-898fe2789e9b"",
+                    ""id"": ""a6714f6b-667b-4e68-a385-cbae5b13273d"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TouchSelect"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""69c952fd-115a-477e-b850-08aa11761711"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
+                    ""name"": """",
+                    ""id"": ""ce8b1edd-2f73-47da-b681-fad45fef8bcf"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76cbc1f3-577e-4399-9a06-34ff86a868af"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Press"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db8e50ab-1160-46b6-b6c3-1b79d538324b"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""ScreenPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3196ca1-4574-4dd7-8295-35b6d9523b0f"",
+                    ""path"": ""<Touchscreen>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""ScreenPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""Mouse"",
-                    ""id"": ""69a65e8f-08ba-4389-b1d1-5da5a9c346a2"",
+                    ""id"": ""70de6819-cabe-479f-a6f5-4965701d0bcd"",
                     ""path"": ""OneModifier"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -96,7 +122,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""modifier"",
-                    ""id"": ""aa6386c8-a0b1-42a3-9dd1-d730e28e83e4"",
+                    ""id"": ""251c0d00-f285-4c92-9bc3-63c1474c0285"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -107,7 +133,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""binding"",
-                    ""id"": ""b0bc1b06-8135-44fd-a8fd-5200a1dd55bc"",
+                    ""id"": ""bfa53d4c-decf-4d1f-b651-eebb0bf9f057"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -118,56 +144,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""7e8a498e-d9f7-4b12-add3-4caeda3835fd"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""TouchPan"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a77e802f-9dde-4d4b-9d7d-e6b9ae97d540"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""TouchZoom"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""842030bd-4587-49b5-99a4-cf66fad4afa2"",
+                    ""id"": ""5faa9e94-77ea-4f16-b82c-978de0bc9270"",
                     ""path"": ""<Mouse>/scroll"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse"",
                     ""action"": ""MouseZoom"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""51b0c0d6-fd82-409b-8bff-6597ff272f09"",
-                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touch"",
-                    ""action"": ""TouchSelect"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""730e3c6b-e5b3-4b67-9592-ad638d7db84a"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""MouseSelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -201,12 +183,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_MousePan = m_Player.FindAction("MousePan", throwIfNotFound: true);
+        m_Player_Press = m_Player.FindAction("Press", throwIfNotFound: true);
         m_Player_MouseZoom = m_Player.FindAction("MouseZoom", throwIfNotFound: true);
-        m_Player_MouseSelect = m_Player.FindAction("MouseSelect", throwIfNotFound: true);
-        m_Player_TouchPan = m_Player.FindAction("TouchPan", throwIfNotFound: true);
-        m_Player_TouchZoom = m_Player.FindAction("TouchZoom", throwIfNotFound: true);
-        m_Player_TouchSelect = m_Player.FindAction("TouchSelect", throwIfNotFound: true);
+        m_Player_MousePan = m_Player.FindAction("MousePan", throwIfNotFound: true);
+        m_Player_ScreenPosition = m_Player.FindAction("ScreenPosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -268,22 +248,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_MousePan;
+    private readonly InputAction m_Player_Press;
     private readonly InputAction m_Player_MouseZoom;
-    private readonly InputAction m_Player_MouseSelect;
-    private readonly InputAction m_Player_TouchPan;
-    private readonly InputAction m_Player_TouchZoom;
-    private readonly InputAction m_Player_TouchSelect;
+    private readonly InputAction m_Player_MousePan;
+    private readonly InputAction m_Player_ScreenPosition;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MousePan => m_Wrapper.m_Player_MousePan;
+        public InputAction @Press => m_Wrapper.m_Player_Press;
         public InputAction @MouseZoom => m_Wrapper.m_Player_MouseZoom;
-        public InputAction @MouseSelect => m_Wrapper.m_Player_MouseSelect;
-        public InputAction @TouchPan => m_Wrapper.m_Player_TouchPan;
-        public InputAction @TouchZoom => m_Wrapper.m_Player_TouchZoom;
-        public InputAction @TouchSelect => m_Wrapper.m_Player_TouchSelect;
+        public InputAction @MousePan => m_Wrapper.m_Player_MousePan;
+        public InputAction @ScreenPosition => m_Wrapper.m_Player_ScreenPosition;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -293,46 +269,34 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @MousePan.started += instance.OnMousePan;
-            @MousePan.performed += instance.OnMousePan;
-            @MousePan.canceled += instance.OnMousePan;
+            @Press.started += instance.OnPress;
+            @Press.performed += instance.OnPress;
+            @Press.canceled += instance.OnPress;
             @MouseZoom.started += instance.OnMouseZoom;
             @MouseZoom.performed += instance.OnMouseZoom;
             @MouseZoom.canceled += instance.OnMouseZoom;
-            @MouseSelect.started += instance.OnMouseSelect;
-            @MouseSelect.performed += instance.OnMouseSelect;
-            @MouseSelect.canceled += instance.OnMouseSelect;
-            @TouchPan.started += instance.OnTouchPan;
-            @TouchPan.performed += instance.OnTouchPan;
-            @TouchPan.canceled += instance.OnTouchPan;
-            @TouchZoom.started += instance.OnTouchZoom;
-            @TouchZoom.performed += instance.OnTouchZoom;
-            @TouchZoom.canceled += instance.OnTouchZoom;
-            @TouchSelect.started += instance.OnTouchSelect;
-            @TouchSelect.performed += instance.OnTouchSelect;
-            @TouchSelect.canceled += instance.OnTouchSelect;
+            @MousePan.started += instance.OnMousePan;
+            @MousePan.performed += instance.OnMousePan;
+            @MousePan.canceled += instance.OnMousePan;
+            @ScreenPosition.started += instance.OnScreenPosition;
+            @ScreenPosition.performed += instance.OnScreenPosition;
+            @ScreenPosition.canceled += instance.OnScreenPosition;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @MousePan.started -= instance.OnMousePan;
-            @MousePan.performed -= instance.OnMousePan;
-            @MousePan.canceled -= instance.OnMousePan;
+            @Press.started -= instance.OnPress;
+            @Press.performed -= instance.OnPress;
+            @Press.canceled -= instance.OnPress;
             @MouseZoom.started -= instance.OnMouseZoom;
             @MouseZoom.performed -= instance.OnMouseZoom;
             @MouseZoom.canceled -= instance.OnMouseZoom;
-            @MouseSelect.started -= instance.OnMouseSelect;
-            @MouseSelect.performed -= instance.OnMouseSelect;
-            @MouseSelect.canceled -= instance.OnMouseSelect;
-            @TouchPan.started -= instance.OnTouchPan;
-            @TouchPan.performed -= instance.OnTouchPan;
-            @TouchPan.canceled -= instance.OnTouchPan;
-            @TouchZoom.started -= instance.OnTouchZoom;
-            @TouchZoom.performed -= instance.OnTouchZoom;
-            @TouchZoom.canceled -= instance.OnTouchZoom;
-            @TouchSelect.started -= instance.OnTouchSelect;
-            @TouchSelect.performed -= instance.OnTouchSelect;
-            @TouchSelect.canceled -= instance.OnTouchSelect;
+            @MousePan.started -= instance.OnMousePan;
+            @MousePan.performed -= instance.OnMousePan;
+            @MousePan.canceled -= instance.OnMousePan;
+            @ScreenPosition.started -= instance.OnScreenPosition;
+            @ScreenPosition.performed -= instance.OnScreenPosition;
+            @ScreenPosition.canceled -= instance.OnScreenPosition;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -370,11 +334,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     }
     public interface IPlayerActions
     {
-        void OnMousePan(InputAction.CallbackContext context);
+        void OnPress(InputAction.CallbackContext context);
         void OnMouseZoom(InputAction.CallbackContext context);
-        void OnMouseSelect(InputAction.CallbackContext context);
-        void OnTouchPan(InputAction.CallbackContext context);
-        void OnTouchZoom(InputAction.CallbackContext context);
-        void OnTouchSelect(InputAction.CallbackContext context);
+        void OnMousePan(InputAction.CallbackContext context);
+        void OnScreenPosition(InputAction.CallbackContext context);
     }
 }
