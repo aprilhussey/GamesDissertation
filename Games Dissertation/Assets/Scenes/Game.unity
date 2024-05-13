@@ -2172,7 +2172,7 @@ MonoBehaviour:
     m_ActionId: 8592c9b5-a6c5-49ae-8b8d-e049a3f4439e
     m_ActionName: Player/MousePan[/Mouse/rightButton,/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Touch
+  m_DefaultControlScheme: Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
