@@ -979,7 +979,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2172,7 +2172,7 @@ MonoBehaviour:
     m_ActionId: 8592c9b5-a6c5-49ae-8b8d-e049a3f4439e
     m_ActionName: Player/MousePan[/Mouse/rightButton,/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: Mouse
+  m_DefaultControlScheme: Touch
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
