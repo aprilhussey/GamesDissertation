@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 	{
 		Loading,
 		Lobby,
-		Room,
 		Game
 	}
 
@@ -40,10 +39,6 @@ public class GameManager : MonoBehaviour
 
 			case GameScene.Lobby:
 				SceneManager.LoadScene("Lobby");
-				break;
-
-			case GameScene.Room:
-				SceneManager.LoadScene("CharacterSelect");
 				break;
 
 			case GameScene.Game:
