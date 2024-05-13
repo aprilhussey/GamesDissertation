@@ -37,19 +37,19 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MouseZoom"",
+                    ""name"": ""MousePan"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""fef6d7c8-5344-4068-bc1a-83ef9776f475"",
-                    ""expectedControlType"": ""Delta"",
+                    ""id"": ""8592c9b5-a6c5-49ae-8b8d-e049a3f4439e"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""MousePan"",
+                    ""name"": ""MouseZoom"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""8592c9b5-a6c5-49ae-8b8d-e049a3f4439e"",
-                    ""expectedControlType"": ""Button"",
+                    ""id"": ""fef6d7c8-5344-4068-bc1a-83ef9776f475"",
+                    ""expectedControlType"": ""Delta"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -110,6 +110,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""5faa9e94-77ea-4f16-b82c-978de0bc9270"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse"",
+                    ""action"": ""MouseZoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""Mouse"",
                     ""id"": ""70de6819-cabe-479f-a6f5-4965701d0bcd"",
                     ""path"": ""OneModifier"",
@@ -141,17 +152,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""MousePan"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5faa9e94-77ea-4f16-b82c-978de0bc9270"",
-                    ""path"": ""<Mouse>/scroll"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Mouse"",
-                    ""action"": ""MouseZoom"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -184,8 +184,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Press = m_Player.FindAction("Press", throwIfNotFound: true);
-        m_Player_MouseZoom = m_Player.FindAction("MouseZoom", throwIfNotFound: true);
         m_Player_MousePan = m_Player.FindAction("MousePan", throwIfNotFound: true);
+        m_Player_MouseZoom = m_Player.FindAction("MouseZoom", throwIfNotFound: true);
         m_Player_ScreenPosition = m_Player.FindAction("ScreenPosition", throwIfNotFound: true);
     }
 
@@ -249,16 +249,16 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Press;
-    private readonly InputAction m_Player_MouseZoom;
     private readonly InputAction m_Player_MousePan;
+    private readonly InputAction m_Player_MouseZoom;
     private readonly InputAction m_Player_ScreenPosition;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Press => m_Wrapper.m_Player_Press;
-        public InputAction @MouseZoom => m_Wrapper.m_Player_MouseZoom;
         public InputAction @MousePan => m_Wrapper.m_Player_MousePan;
+        public InputAction @MouseZoom => m_Wrapper.m_Player_MouseZoom;
         public InputAction @ScreenPosition => m_Wrapper.m_Player_ScreenPosition;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -272,12 +272,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Press.started += instance.OnPress;
             @Press.performed += instance.OnPress;
             @Press.canceled += instance.OnPress;
-            @MouseZoom.started += instance.OnMouseZoom;
-            @MouseZoom.performed += instance.OnMouseZoom;
-            @MouseZoom.canceled += instance.OnMouseZoom;
             @MousePan.started += instance.OnMousePan;
             @MousePan.performed += instance.OnMousePan;
             @MousePan.canceled += instance.OnMousePan;
+            @MouseZoom.started += instance.OnMouseZoom;
+            @MouseZoom.performed += instance.OnMouseZoom;
+            @MouseZoom.canceled += instance.OnMouseZoom;
             @ScreenPosition.started += instance.OnScreenPosition;
             @ScreenPosition.performed += instance.OnScreenPosition;
             @ScreenPosition.canceled += instance.OnScreenPosition;
@@ -288,12 +288,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Press.started -= instance.OnPress;
             @Press.performed -= instance.OnPress;
             @Press.canceled -= instance.OnPress;
-            @MouseZoom.started -= instance.OnMouseZoom;
-            @MouseZoom.performed -= instance.OnMouseZoom;
-            @MouseZoom.canceled -= instance.OnMouseZoom;
             @MousePan.started -= instance.OnMousePan;
             @MousePan.performed -= instance.OnMousePan;
             @MousePan.canceled -= instance.OnMousePan;
+            @MouseZoom.started -= instance.OnMouseZoom;
+            @MouseZoom.performed -= instance.OnMouseZoom;
+            @MouseZoom.canceled -= instance.OnMouseZoom;
             @ScreenPosition.started -= instance.OnScreenPosition;
             @ScreenPosition.performed -= instance.OnScreenPosition;
             @ScreenPosition.canceled -= instance.OnScreenPosition;
@@ -335,8 +335,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnPress(InputAction.CallbackContext context);
-        void OnMouseZoom(InputAction.CallbackContext context);
         void OnMousePan(InputAction.CallbackContext context);
+        void OnMouseZoom(InputAction.CallbackContext context);
         void OnScreenPosition(InputAction.CallbackContext context);
     }
 }

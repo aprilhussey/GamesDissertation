@@ -15,19 +15,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseZoom",
+                    "name": "MousePan",
                     "type": "PassThrough",
-                    "id": "fef6d7c8-5344-4068-bc1a-83ef9776f475",
-                    "expectedControlType": "Delta",
+                    "id": "8592c9b5-a6c5-49ae-8b8d-e049a3f4439e",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MousePan",
+                    "name": "MouseZoom",
                     "type": "PassThrough",
-                    "id": "8592c9b5-a6c5-49ae-8b8d-e049a3f4439e",
-                    "expectedControlType": "Button",
+                    "id": "fef6d7c8-5344-4068-bc1a-83ef9776f475",
+                    "expectedControlType": "Delta",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -88,6 +88,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "5faa9e94-77ea-4f16-b82c-978de0bc9270",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "MouseZoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Mouse",
                     "id": "70de6819-cabe-479f-a6f5-4965701d0bcd",
                     "path": "OneModifier",
@@ -119,17 +130,6 @@
                     "action": "MousePan",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "5faa9e94-77ea-4f16-b82c-978de0bc9270",
-                    "path": "<Mouse>/scroll",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Mouse",
-                    "action": "MouseZoom",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 }
             ]
         }
