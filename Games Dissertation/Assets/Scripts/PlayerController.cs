@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
 	private AudioListener playerAudioListener;
 
 	// Player checker color
-	[SerializeField]
 	private Checker.CheckerColor playerCheckerColor;
 
 	void Awake()
@@ -78,6 +77,15 @@ public class PlayerController : MonoBehaviour
 		{
 			if (photonView.IsMine)
 			{
+				if (playerCheckerColor == Checker.CheckerColor.Black)
+				{
+					playerCameraController.transform.rotation = Quaternion.Euler(0, 180, 0);
+				}
+				else
+				{
+					playerCameraController.transform.rotation = Quaternion.Euler(0, 0, 0);
+				}
+
 				playerCameraController.SetActive(true);
 				playerAudioListener.enabled = true;
 			}
@@ -126,8 +134,7 @@ public class PlayerController : MonoBehaviour
 			if (hit.transform.GetComponentInParent<Tile>() != null)
 			{
 				GameObject hitTile = hit.transform.GetComponentInParent<Tile>().gameObject;
-
-				Debug.Log($"Raycast hit: {hitTile.transform.name}");
+				//Debug.Log($"Raycast hit: {hitTile.transform.name}");
 
 				if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
 				{

@@ -54,13 +54,13 @@ public class Board : MonoBehaviour
 
 	public (int, int) FindTilePosition(Tile tile)
 	{
-		for (int i = 0; i < boardList.Count; i++)
+		for (int y = 0; y < boardList.Count; y++)
 		{
-			for (int j = 0; j < boardList[i].Count; j++)
+			for (int x = 0; x < boardList[y].Count; x++)
 			{
-				if (boardList[i][j] == tile)
+				if (boardList[y][x] == tile)
 				{
-					return (i, j);
+					return (y, x);
 				}
 			}
 		}
@@ -70,15 +70,15 @@ public class Board : MonoBehaviour
 
 	public void SyncMoveChecker((int, int) originalPosition, (int, int) newPosition)
 	{
-		photonView.RPC("MoveChecker", RpcTarget.All, originalPosition, newPosition);
+		photonView.RPC("MoveChecker", RpcTarget.All, originalPosition.Item1, originalPosition.Item2, newPosition.Item1, newPosition.Item2);
 	}
 
 	[PunRPC]
-	public void MoveChecker(Vector2Int originalPosition, Vector2Int newPosition)
+	public void MoveChecker(int yOriginalPosition, int xOriginalPosition, int yNewPosition, int xNewPosition)
 	{
-		GameObject currentTile = boardList[originalPosition.x][originalPosition.y].gameObject;
+		GameObject currentTile = boardList[yOriginalPosition][xOriginalPosition].gameObject;
 		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject();
-		GameObject tileToMoveTo = boardList[newPosition.x][newPosition.y].gameObject;
+		GameObject tileToMoveTo = boardList[yNewPosition][xNewPosition].gameObject;
 
 		checkerToMove.transform.SetParent(tileToMoveTo.transform);
 		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
@@ -89,14 +89,14 @@ public class Board : MonoBehaviour
 
 	public void SyncRemoveChecker((int, int) position)
 	{
-		photonView.RPC("RemoveChecker", RpcTarget.All, position);
+		photonView.RPC("RemoveChecker", RpcTarget.AllBuffered, position.Item1, position.Item2);
 	}
 
 	[PunRPC]
-	public void RemoveChecker(Vector2Int position)
+	public void RemoveChecker(int y, int x)
 	{
-		Destroy(boardList[position.x][position.y].GetCheckerObject());
-		boardList[position.x][position.y].NullCheckerObject();
+		Destroy(boardList[y][x].GetCheckerObject());
+		boardList[y][x].NullCheckerObject();
 	}
 
 	public bool IsValidMove(Tile currentTile, Tile newTile)
@@ -153,18 +153,18 @@ public class Board : MonoBehaviour
 
 	private bool TileIsForwardRelative(Tile currentTile, Tile newTile)
 	{
-		(int x, int y) currentTilePosition = FindTilePosition(currentTile);
-		(int x, int y) newTilePosition = FindTilePosition(newTile);
+		(int y, int x) currentTilePosition = FindTilePosition(currentTile);
+		(int y, int x) newTilePosition = FindTilePosition(newTile);
 
 		bool isForwardRelative;
 
 		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.White)
 		{
-			return isForwardRelative = currentTilePosition.x < newTilePosition.x;
+			return isForwardRelative = currentTilePosition.y < newTilePosition.y;
 		}
 		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.Black)
 		{
-			return isForwardRelative = currentTilePosition.x > newTilePosition.x;
+			return isForwardRelative = currentTilePosition.y > newTilePosition.y;
 		}
 		else
 		{
