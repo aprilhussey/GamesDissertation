@@ -2,42 +2,71 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class PlayerSpawner : MonoBehaviour
+public class PlayerSpawner : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;
 
-    private static Checker.CheckerColor? lastPlayerCheckerColor = null;
+    [SerializeField]
+    private GameObject whiteOrBlackCanvas;
+	[SerializeField]
+	private GameObject waitingForRoomOwnerCanvas;
 
-    void Start()
+	void Start()
     {
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, this.transform.position, this.transform.rotation);
-        SetPlayerCheckerColor(player.GetComponent<PlayerController>());
-    }
 
-    private void SetPlayerCheckerColor(PlayerController playerController)
-    {
-		if (lastPlayerCheckerColor == null)
+        Photon.Realtime.Player playerInstance = player.GetComponent<PhotonView>().Owner;
+    
+        if (playerInstance == PhotonNetwork.MasterClient)
         {
-			playerController.SetPlayerCheckerColor(RandomCheckerColor());
-            lastPlayerCheckerColor = playerController.GetPlayerCheckerColor();
+            Debug.Log($"{playerInstance.NickName} is the Master Client");
+			whiteOrBlackCanvas.SetActive(true);
 		}
-        else if (lastPlayerCheckerColor != null)
-        {
-            playerController.SetPlayerCheckerColor((lastPlayerCheckerColor == Checker.CheckerColor.Black) ? Checker.CheckerColor.White : Checker.CheckerColor.Black);
-            lastPlayerCheckerColor = playerController.GetPlayerCheckerColor();
-        }
-    }
-
-    private Checker.CheckerColor RandomCheckerColor()
-    {
-        if (Random.value > 0.5f)
-        {
-            return Checker.CheckerColor.Black;
-        }
         else
         {
-            return Checker.CheckerColor.White;
-        }
+            Debug.Log($"{playerInstance.NickName} is not the Master Client");
+			waitingForRoomOwnerCanvas.SetActive(true);
+		}
     }
+
+    public void OnWhiteCheckerClick()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            // Set the RoomOwnerCheckerColor
+            ExitGames.Client.Photon.Hashtable customProperties = new ExitGames.Client.Photon.Hashtable();
+
+            customProperties.Add("RoomOwnerCheckerColor", Checker.CheckerColor.White);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
+        }
+		photonView.RPC("HideCanvases", RpcTarget.AllBuffered);
+	}
+
+    public void OnBlackCheckerClick()
+    {
+		if (PhotonNetwork.IsMasterClient)
+		{
+			// Set the RoomOwnerCheckerColor
+			ExitGames.Client.Photon.Hashtable customProperties = new ExitGames.Client.Photon.Hashtable();
+
+			customProperties.Add("RoomOwnerCheckerColor", Checker.CheckerColor.Black);
+			PhotonNetwork.CurrentRoom.SetCustomProperties(customProperties);
+		}
+		photonView.RPC("HideCanvases", RpcTarget.AllBuffered);
+	}
+
+	[PunRPC]
+	public void HideCanvases()
+    {
+		if (whiteOrBlackCanvas.activeInHierarchy)
+		{
+			whiteOrBlackCanvas.SetActive(false);
+		}
+		else if (waitingForRoomOwnerCanvas.activeInHierarchy)
+		{
+			waitingForRoomOwnerCanvas.SetActive(false);
+		}
+	}
 }

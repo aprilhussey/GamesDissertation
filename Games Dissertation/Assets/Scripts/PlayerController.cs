@@ -78,15 +78,6 @@ public class PlayerController : MonoBehaviour
 		{
 			if (photonView.IsMine)
 			{
-				if (playerCheckerColor == Checker.CheckerColor.Black)
-				{
-					playerCameraController.transform.rotation = Quaternion.Euler(0, 180, 0);
-				}
-				else
-				{
-					playerCameraController.transform.rotation = Quaternion.Euler(0, 0, 0);
-				}
-
 				playerCameraController.SetActive(true);
 				playerAudioListener.enabled = true;
 			}
@@ -98,19 +89,34 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-    void OnEnable()
-    {
-		playerActionMap["Press"].performed += OnPress;
-		playerActionMap["Pan"].performed += OnPan;
-		playerActionMap["Zoom"].performed += OnZoom;
-	}
-
 	void Update()
 	{
 		if (photonView != null)
 		{
 			if (!photonView.IsMine && PhotonNetwork.IsConnected) return;
+
+			if (PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue("RoomOwnerCheckerColor", out object roomOwnerCheckerColor))
+			{
+				if (PhotonNetwork.IsMasterClient)
+				{
+					photonView.RPC("SetPlayerCheckerColor", RpcTarget.AllBuffered, ((Checker.CheckerColor)roomOwnerCheckerColor));
+					SetCameraRotation();
+				}
+				else
+				{
+					photonView.RPC("SetPlayerCheckerColor", RpcTarget.AllBuffered, ((Checker.CheckerColor)roomOwnerCheckerColor ==
+						Checker.CheckerColor.Black) ? Checker.CheckerColor.White : Checker.CheckerColor.Black);
+					SetCameraRotation();
+				}
+			}
 		}
+	}
+
+    void OnEnable()
+    {
+		playerActionMap["Press"].performed += OnPress;
+		playerActionMap["Pan"].performed += OnPan;
+		playerActionMap["Zoom"].performed += OnZoom;
 	}
 
     void OnDisable()
@@ -215,6 +221,7 @@ public class PlayerController : MonoBehaviour
 		playerCameraController.transform.Translate(movement, Space.Self);
 	}
 
+	[PunRPC]
 	public void SetPlayerCheckerColor(Checker.CheckerColor checkerColor)
 	{
 		playerCheckerColor = checkerColor;
@@ -223,6 +230,18 @@ public class PlayerController : MonoBehaviour
 	public Checker.CheckerColor GetPlayerCheckerColor()
 	{
 		return playerCheckerColor;
+	}
+
+	private void SetCameraRotation()
+	{
+		if (playerCheckerColor == Checker.CheckerColor.Black)
+		{
+			playerCameraController.transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
+		else
+		{
+			playerCameraController.transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
 	}
 }
 
