@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+	// Input actions
 	private PlayerInput playerInput;
 	private InputActionAsset inputActionAsset;
 	private InputActionMap playerActionMap;
@@ -14,10 +15,26 @@ public class PlayerController : MonoBehaviour
 	private Camera mainCamera;
 	private Board board;
 
+	// Moving checkers
 	private GameObject currentTileObject;
 	private GameObject checkerObjectToMove;
 
 	private GameObject tileObjectToMoveTo;
+
+	[Header("Camera Settings")]
+	[SerializeField]
+	private float panSpeed = 5f;
+
+	[SerializeField]
+	private float zoomSpeed = 5f;
+
+	private float xAngle;
+	private float yAngle;
+	private float zAngle;
+
+	// Player checker color
+	[SerializeField]
+	private Checker.CheckerColor playerCheckerColor;
 
 	void Awake()
     {
@@ -30,16 +47,27 @@ public class PlayerController : MonoBehaviour
 
 		mainCamera = Camera.main;
 		board = FindObjectOfType<Board>();
+
+		// Zoom
+		xAngle = mainCamera.transform.rotation.eulerAngles.x;
+		yAngle = mainCamera.transform.rotation.eulerAngles.y;
+		zAngle = mainCamera.transform.rotation.eulerAngles.z;
+
+		mainCamera.transform.rotation = Quaternion.Euler(xAngle, yAngle, zAngle);
 	}
 
     void OnEnable()
     {
 		playerActionMap["Press"].performed += OnPress;
+		playerActionMap["Pan"].performed += OnPan;
+		playerActionMap["Zoom"].performed += OnZoom;
 	}
 
     void OnDisable()
     {
 		playerActionMap["Press"].performed -= OnPress;
+		playerActionMap["Pan"].performed -= OnPan;
+		playerActionMap["Zoom"].performed -= OnZoom;
 	}
 
 	private void OnPress(InputAction.CallbackContext context)
@@ -104,6 +132,39 @@ public class PlayerController : MonoBehaviour
 
 		board.RemoveHighlightFromBoardTiles();
 		board.RemoveHighlightFromChecker();
+	}
+
+	private void OnPan(InputAction.CallbackContext	context)
+	{
+		Vector2 delta = context.ReadValue<Vector2>();
+
+		Vector3 movement = new Vector3(delta.y, 0, -delta.x) * panSpeed * Time.deltaTime;  // Pan affects the x and z axis
+		mainCamera.transform.parent.transform.Translate(movement, Space.World);
+	}
+
+	private void OnZoom(InputAction.CallbackContext context)
+	{
+		float zoom = context.ReadValue<Vector2>().y;
+
+		// Set rotation of camera
+		Quaternion rotation = Quaternion.Euler(xAngle, yAngle, zAngle);
+
+		// Calculate the forward direction based on the rotation
+		Vector3 calculatedForward = rotation * Vector3.forward;
+
+		// Zoom happens along the calculated forward direction
+		Vector3 movement = zoom * zoomSpeed * Time.deltaTime * calculatedForward;
+		mainCamera.transform.parent.transform.Translate(movement, Space.Self);
+	}
+
+	public void SetPlayerCheckerColor(Checker.CheckerColor checkerColor)
+	{
+		playerCheckerColor = checkerColor;
+	}
+
+	public Checker.CheckerColor GetPlayerCheckerColor()
+	{
+		return playerCheckerColor;
 	}
 }
 

@@ -7,8 +7,8 @@ public class Checker : MonoBehaviour
 {
 	public enum CheckerColor
 	{
-		black,
-		white
+		Black,
+		White
 	}
 
 	[SerializeField]

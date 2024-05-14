@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MousePan",
+                    "name": "Pan",
                     "type": "PassThrough",
                     "id": "8592c9b5-a6c5-49ae-8b8d-e049a3f4439e",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseZoom",
+                    "name": "Zoom",
                     "type": "PassThrough",
                     "id": "fef6d7c8-5344-4068-bc1a-83ef9776f475",
                     "expectedControlType": "Delta",
@@ -94,7 +94,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "MouseZoom",
+                    "action": "Zoom",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -105,7 +105,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MousePan",
+                    "action": "Pan",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -116,7 +116,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "MousePan",
+                    "action": "Pan",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -127,7 +127,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse",
-                    "action": "MousePan",
+                    "action": "Pan",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

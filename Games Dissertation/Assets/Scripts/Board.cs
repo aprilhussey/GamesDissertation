@@ -110,7 +110,7 @@ public class Board : MonoBehaviour
 
 	private bool TileIsNotWhite(Tile tile)
 	{
-		if (tile.GetComponentInChildren<BoardTile>().GetBoardTileColor != BoardTile.BoardTileColor.white)
+		if (tile.GetComponentInChildren<BoardTile>().GetBoardTileColor != BoardTile.BoardTileColor.White)
 		{
 			return true;
 		}
@@ -139,11 +139,11 @@ public class Board : MonoBehaviour
 
 		bool isForwardRelative;
 
-		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.white)
+		if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.White)
 		{
 			return isForwardRelative = currentTilePosition.x < newTilePosition.x;
 		}
-		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.black)
+		else if (currentTile.GetComponentInChildren<Checker>().GetCheckerColor == Checker.CheckerColor.Black)
 		{
 			return isForwardRelative = currentTilePosition.x > newTilePosition.x;
 		}
@@ -269,11 +269,11 @@ public class Board : MonoBehaviour
 				{
 					checker.Highlighted = false;
 
-					if (checker.GetCheckerColor == Checker.CheckerColor.black)
+					if (checker.GetCheckerColor == Checker.CheckerColor.Black)
 					{
 						renderer.material = chessFiguresBlack;
 					}
-					else if (checker.GetCheckerColor == Checker.CheckerColor.white)
+					else if (checker.GetCheckerColor == Checker.CheckerColor.White)
 					{
 						renderer.material = chessFiguresWhite;
 					}

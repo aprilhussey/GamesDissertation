@@ -8,8 +8,8 @@ public class BoardTile : MonoBehaviour
 {
     public enum BoardTileColor
     {
-        black,
-        white
+        Black,
+        White
     }
 
     [SerializeField]
