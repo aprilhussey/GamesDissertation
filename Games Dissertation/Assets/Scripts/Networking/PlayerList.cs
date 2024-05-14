@@ -96,9 +96,11 @@ public class PlayerList : MonoBehaviourPunCallbacks
 	{
 		var players = PhotonNetwork.PlayerList;
 
-		// This is just using a shorthand via Linq instead of having a loop with a counter
-		// for checking whether all players in the list have the key "Ready" in their custom properties
-		if (players.All(player => player.CustomProperties.ContainsKey("Ready") && (bool)player.CustomProperties["Ready"]))
+		// Count number of players who are ready
+		int readyPlayerCount = players.Count(player => player.CustomProperties.ContainsKey("Ready") && (bool)player.CustomProperties["Ready"]);
+
+		// Check if the number of ready players is equal to the maximum number of players in the room
+		if (readyPlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers)
 		{
 			Debug.Log("All players are ready!");
 			GameManager.Instance.ChangeGameScene(GameManager.GameScene.Game);
