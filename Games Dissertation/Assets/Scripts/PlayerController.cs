@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
 	private AudioListener playerAudioListener;
 
 	// Player checker color
+	[SerializeField]
 	private Checker.CheckerColor playerCheckerColor;
 
 	void Awake()

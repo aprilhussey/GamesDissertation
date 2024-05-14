@@ -7,7 +7,7 @@ public class PlayerSpawner : MonoBehaviour
 {
     public GameObject playerPrefab;
 
-    private Checker.CheckerColor? lastPlayerCheckerColor = null;
+    private static Checker.CheckerColor? lastPlayerCheckerColor = null;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerSpawner : MonoBehaviour
 			playerController.SetPlayerCheckerColor(RandomCheckerColor());
             lastPlayerCheckerColor = playerController.GetPlayerCheckerColor();
 		}
-        else
+        else if (lastPlayerCheckerColor != null)
         {
             playerController.SetPlayerCheckerColor((lastPlayerCheckerColor == Checker.CheckerColor.Black) ? Checker.CheckerColor.White : Checker.CheckerColor.Black);
             lastPlayerCheckerColor = playerController.GetPlayerCheckerColor();
