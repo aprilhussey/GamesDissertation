@@ -1,6 +1,6 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Checker : MonoBehaviour
@@ -11,6 +11,10 @@ public class Checker : MonoBehaviour
 		White
 	}
 
+	// Photon
+	[HideInInspector]
+	public PhotonView photonView;
+
 	[SerializeField]
 	private CheckerColor checkerColor;
 
@@ -18,6 +22,12 @@ public class Checker : MonoBehaviour
 	private bool king;
 
 	private bool highlighted = false;
+
+	void Awake()
+	{
+		// Photon
+		photonView = this.GetComponent<PhotonView>();
+	}
 
 	public CheckerColor GetCheckerColor
 	{

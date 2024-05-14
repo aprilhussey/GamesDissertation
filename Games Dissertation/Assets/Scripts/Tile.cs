@@ -1,14 +1,22 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+	// Photon
+	[HideInInspector]
+	public PhotonView photonView;
+
     private GameObject boardTileObject;
     private GameObject checkerObject;
 
 	private void Awake()
 	{
+		// Photon
+		photonView = this.GetComponent<PhotonView>();
+
 		if (this.GetComponentInChildren<BoardTile>())
 		{
 			boardTileObject = this.GetComponentInChildren<BoardTile>().gameObject;
@@ -29,7 +37,6 @@ public class Tile : MonoBehaviour
 			checkerObject = this.GetComponentInChildren<Checker>().gameObject;
 		}
 	}
-
 
 	public void NullCheckerObject()
 	{

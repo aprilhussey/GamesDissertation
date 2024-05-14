@@ -1,11 +1,15 @@
+using Photon.Pun;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+	// Photon
+	[HideInInspector]
+	public PhotonView photonView;
+
 	private List<List<Tile>> boardList = new List<List<Tile>>();
 
 	[SerializeField]
@@ -22,6 +26,9 @@ public class Board : MonoBehaviour
 
 	void Awake()
 	{
+		// Photon
+		photonView = this.GetComponent<PhotonView>();
+
 		foreach (Transform child in this.transform)
 		{
 			Row row = child.GetComponent<Row>();
@@ -42,7 +49,7 @@ public class Board : MonoBehaviour
 	{
 		(int, int) currentTilePosition = FindTilePosition(currentTile);
 		(int, int) newTilePosition = FindTilePosition(newTile);
-		MoveChecker(currentTilePosition, newTilePosition);
+		SyncMoveChecker(currentTilePosition, newTilePosition);
 	}
 
 	public (int, int) FindTilePosition(Tile tile)
@@ -61,11 +68,17 @@ public class Board : MonoBehaviour
 		return (-1, -1);
 	}
 
-	public void MoveChecker((int, int) originalPosition, (int, int) newPosition)
+	public void SyncMoveChecker((int, int) originalPosition, (int, int) newPosition)
 	{
-		GameObject currentTile = boardList[originalPosition.Item1][originalPosition.Item2].gameObject;
+		photonView.RPC("MoveChecker", RpcTarget.All, originalPosition, newPosition);
+	}
+
+	[PunRPC]
+	public void MoveChecker(Vector2Int originalPosition, Vector2Int newPosition)
+	{
+		GameObject currentTile = boardList[originalPosition.x][originalPosition.y].gameObject;
 		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject();
-		GameObject tileToMoveTo = boardList[newPosition.Item1][newPosition.Item2].gameObject;
+		GameObject tileToMoveTo = boardList[newPosition.x][newPosition.y].gameObject;
 
 		checkerToMove.transform.SetParent(tileToMoveTo.transform);
 		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
@@ -74,10 +87,16 @@ public class Board : MonoBehaviour
 		tileToMoveTo.GetComponent<Tile>().SetCheckerObject();
 	}
 
-	public void RemoveChecker((int, int) position)
+	public void SyncRemoveChecker((int, int) position)
 	{
-		Destroy(boardList[position.Item1][position.Item2].GetCheckerObject());
-		boardList[position.Item1][position.Item2].NullCheckerObject();
+		photonView.RPC("RemoveChecker", RpcTarget.All, position);
+	}
+
+	[PunRPC]
+	public void RemoveChecker(Vector2Int position)
+	{
+		Destroy(boardList[position.x][position.y].GetCheckerObject());
+		boardList[position.x][position.y].NullCheckerObject();
 	}
 
 	public bool IsValidMove(Tile currentTile, Tile newTile)
@@ -201,7 +220,7 @@ public class Board : MonoBehaviour
 				Tile middleTile = boardList[(currentTilePosition.y + newTilePosition.y) / 2][(currentTilePosition.x + newTilePosition.x) / 2];
 				if (middleTile.GetComponentInChildren<Checker>() != null)
 				{
-					RemoveChecker(FindTilePosition(middleTile));
+					SyncRemoveChecker(FindTilePosition(middleTile));
 				}
 			}
 		}

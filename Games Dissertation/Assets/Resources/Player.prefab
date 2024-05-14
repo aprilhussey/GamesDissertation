@@ -223,6 +223,7 @@ MonoBehaviour:
   panSpeed: 5
   zoomSpeed: 5
   playerAudioListener: {fileID: 3658656160937095028}
+  playerCheckerColor: 0
 --- !u!114 &5272775833188636024
 MonoBehaviour:
   m_ObjectHideFlags: 0
