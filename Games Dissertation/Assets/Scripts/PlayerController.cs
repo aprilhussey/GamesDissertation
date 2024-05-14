@@ -131,18 +131,21 @@ public class PlayerController : MonoBehaviour
 
 				if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
 				{
-					currentTileObject = hitTile;
-					checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
-
-					board.HighlightChecker(currentTileObject.GetComponent<Tile>());
-
-					foreach (List<Tile> row in board.GetBoardList)
+					if (hitTile.GetComponentInChildren<Checker>().GetCheckerColor == playerCheckerColor)
 					{
-						foreach (Tile tile in row)
+						currentTileObject = hitTile;
+						checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
+
+						board.HighlightChecker(currentTileObject.GetComponent<Tile>());
+
+						foreach (List<Tile> row in board.GetBoardList)
 						{
-							if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
+							foreach (Tile tile in row)
 							{
-								board.HighlightBoardTile(tile);
+								if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
+								{
+									board.HighlightBoardTile(tile);
+								}
 							}
 						}
 					}
