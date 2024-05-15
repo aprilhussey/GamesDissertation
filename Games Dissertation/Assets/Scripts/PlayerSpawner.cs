@@ -17,17 +17,20 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
     {
         GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, this.transform.position, this.transform.rotation);
 
-        Photon.Realtime.Player playerInstance = player.GetComponent<PhotonView>().Owner;
-    
-        if (playerInstance == PhotonNetwork.MasterClient)
-        {
-            Debug.Log($"{playerInstance.NickName} is the Master Client");
-			whiteOrBlackCanvas.SetActive(true);
-		}
-        else
-        {
-            Debug.Log($"{playerInstance.NickName} is not the Master Client");
-			waitingForRoomOwnerCanvas.SetActive(true);
+		if (!PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey("RoomOwnerCheckerColor"))
+		{
+			Photon.Realtime.Player playerInstance = player.GetComponent<PhotonView>().Owner;
+
+			if (playerInstance == PhotonNetwork.MasterClient)
+			{
+				Debug.Log($"{playerInstance.NickName} is the Master Client");
+				whiteOrBlackCanvas.SetActive(true);
+			}
+			else
+			{
+				Debug.Log($"{playerInstance.NickName} is not the Master Client");
+				waitingForRoomOwnerCanvas.SetActive(true);
+			}
 		}
     }
 

@@ -15,7 +15,7 @@ public class RoomList : MonoBehaviourPunCallbacks
 	public override void OnJoinedRoom()
 	{
 		//content.DestroyChildren();
-		roomListItems.Clear();
+		//roomListItems.Clear();
 	}
 
 	public override void OnRoomListUpdate(List<RoomInfo> roomList)
