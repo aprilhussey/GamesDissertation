@@ -24,7 +24,7 @@ public class Tile : MonoBehaviour
 			boardTile = this.GetComponentInChildren<BoardTile>();
 		}
 
-		SetCheckerAndCheckerObject();
+		SetCheckerObject();
 	}
 
 	public GameObject GetCheckerObject
@@ -32,7 +32,7 @@ public class Tile : MonoBehaviour
 		get { return checkerObject; }
 	}
 
-	public void SetCheckerAndCheckerObject()
+	public void SetCheckerObject()
 	{
 		if (this.GetComponentInChildren<Checker>())
 		{
@@ -40,7 +40,7 @@ public class Tile : MonoBehaviour
 		}
 	}
 
-	public void NullCheckerAndCheckerObject()
+	public void NullCheckerObject()
 	{
 		checkerObject = null;
 	}

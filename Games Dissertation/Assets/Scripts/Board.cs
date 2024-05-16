@@ -85,13 +85,15 @@ public class Board : MonoBehaviour
 	{
 		Tile currentTile = boardList[yOriginalPosition][xOriginalPosition];
 		Tile tileToMoveTo = boardList[yNewPosition][xNewPosition];
+
+		currentTile.SetCheckerObject();
 		GameObject checkerToMove = currentTile.GetCheckerObject;
 
 		checkerToMove.transform.SetParent(tileToMoveTo.gameObject.transform);
 		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
 
-		currentTile.NullCheckerAndCheckerObject();
-		tileToMoveTo.SetCheckerAndCheckerObject();
+		currentTile.NullCheckerObject();
+		tileToMoveTo.SetCheckerObject();
 	}
 
 	public void SyncRemoveChecker((int, int) position)
@@ -103,7 +105,7 @@ public class Board : MonoBehaviour
 	public void RemoveChecker(int y, int x)
 	{
 		Destroy(boardList[y][x].GetCheckerObject);
-		boardList[y][x].NullCheckerAndCheckerObject();
+		boardList[y][x].NullCheckerObject();
 	}
 
 	public bool IsValidMove(Tile currentTile, Tile newTile)
@@ -343,7 +345,7 @@ public class Board : MonoBehaviour
 	{
 		Checker checker = currentTile.GetComponentInChildren<Checker>();
 
-		SyncRemoveChecker(FindTilePosition(currentTile));
+		SyncRemoveChecker(FindTilePosition(newTile));
 
 		switch (checker.GetCheckerColor)
 		{
@@ -369,6 +371,9 @@ public class Board : MonoBehaviour
 		checkerObject.transform.SetParent(tileObject.transform);
 		checkerObject.transform.localPosition = new Vector3(0, checkerObject.transform.position.y, 0);
 
-		tileObject.GetComponent<Tile>().SetCheckerAndCheckerObject();
+		tileObject.GetComponent<Tile>().SetCheckerObject();
+
+		(int, int) tilePosition = FindTilePosition(tileObject.GetComponent<Tile>());
+		Destroy(boardList[tilePosition.Item1][tilePosition.Item2].GetComponentInChildren<Checker>().gameObject);
 	}
 }
