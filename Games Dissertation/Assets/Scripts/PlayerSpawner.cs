@@ -83,4 +83,9 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
 	{
 		get { return waitingForRoomOwnerCanvas; }
 	}
+
+	public void OnBackToLobbyClick()
+	{
+		PhotonNetwork.LeaveRoom();
+	}
 }

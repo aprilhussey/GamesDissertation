@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -13,15 +14,13 @@ public class Board : MonoBehaviour
 
 	private List<List<Tile>> boardList = new List<List<Tile>>();
 
+	[Header("Materials")]
 	[SerializeField]
 	private Material chessBoardBlack;
-
 	[SerializeField]
 	private Material chessFiguresBlack;
-
 	[SerializeField]
 	private Material chessFiguresWhite;
-
 	[SerializeField]
 	private Material highlight;
 
@@ -30,6 +29,15 @@ public class Board : MonoBehaviour
 	private GameObject kingCheckerBlackObject;
 	[SerializeField]
 	private GameObject kingCheckerWhiteObject;
+
+	List<Checker> currentBlackCheckersOnBoard;
+	List<Checker> currentWhiteCheckersOnBoard;
+
+	[Header("Win Canvas")]
+	[SerializeField]
+	private GameObject checkersWinCanvas;
+
+	private List<Tile> totalTilesInBoard;
 
 	void Awake()
 	{
@@ -45,6 +53,144 @@ public class Board : MonoBehaviour
 				boardList.Insert(0, row.GetRow);    // Inserts new row at the beginning of the list
 			}
 		}
+
+		totalTilesInBoard = new List<Tile>();
+	}
+
+	void Start()
+	{
+		foreach (List<Tile> row in boardList)
+		{
+			foreach (Tile tile in row)
+			{
+				totalTilesInBoard.Add(tile);
+			}
+		}
+
+		currentBlackCheckersOnBoard = GetCheckersOnBoard(Checker.CheckerColor.Black);
+		currentWhiteCheckersOnBoard = GetCheckersOnBoard(Checker.CheckerColor.White);
+	}
+
+	void Update()
+	{
+		if (checkersHaveNoValidMoves(Checker.CheckerColor.Black))
+		{
+			CheckersWin(Checker.CheckerColor.White);
+		}
+		if (checkersHaveNoValidMoves(Checker.CheckerColor.White))
+		{
+			CheckersWin(Checker.CheckerColor.Black);
+		}
+	}
+
+	private bool checkersHaveNoValidMoves(Checker.CheckerColor checkerColor)
+	{
+		List<Tile> tilesNotValidMove = new List<Tile>();
+
+		foreach (List<Tile> row in boardList)
+		{
+			foreach (Tile tile in row)
+			{
+				if (tile.GetChecker != null)
+				{
+					if (tile.GetChecker.GetCheckerColor == checkerColor)
+					{
+						Tile currentTile = tile;
+
+						foreach (List<Tile> newRow in boardList)
+						{
+							foreach (Tile newTile in newRow)
+							{
+								if (!IsValidMove(currentTile, newTile))
+								{
+									tilesNotValidMove.Add(newTile);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if (tilesNotValidMove.Count == totalTilesInBoard.Count)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	private void CheckersWin(Checker.CheckerColor checkerColor)
+	{
+		TMP_Text checkersWinCanvasText = checkersWinCanvas.GetComponentInChildren<TMP_Text>();
+		string originalText = checkersWinCanvasText.text;
+
+		if (checkerColor == Checker.CheckerColor.White)
+		{
+			checkersWinCanvasText.text = originalText.Replace("COLOR", "WHITE");
+			checkersWinCanvas.SetActive(true);
+		}
+		if (checkerColor == Checker.CheckerColor.Black)
+		{
+			checkersWinCanvasText.text = originalText.Replace("COLOR", "BLACK");
+			checkersWinCanvas.SetActive(true);
+		}
+	}
+
+	private void CheckerCountWin()
+	{
+		if (currentBlackCheckersOnBoard.Count < 1)
+		{
+			//Debug.Log("White checkers win");
+			CheckersWin(Checker.CheckerColor.White);
+		}
+		if (currentWhiteCheckersOnBoard.Count < 1)
+		{
+			//Debug.Log("Black checkers win");
+			CheckersWin(Checker.CheckerColor.Black);
+		}
+	}
+
+	private void UpdateCheckerCount()
+	{
+		List<Checker> newBlackCheckersOnBoard = GetCheckersOnBoard(Checker.CheckerColor.Black);
+		List<Checker> newWhiteCheckersOnBoard = GetCheckersOnBoard(Checker.CheckerColor.White);
+
+		if (currentBlackCheckersOnBoard.Count > newBlackCheckersOnBoard.Count)
+		{
+			currentBlackCheckersOnBoard = newBlackCheckersOnBoard;
+		}
+		if (currentWhiteCheckersOnBoard.Count > newWhiteCheckersOnBoard.Count)
+		{
+			currentWhiteCheckersOnBoard = newWhiteCheckersOnBoard;
+		}
+	}
+
+	private List<Checker> GetCheckersOnBoard(Checker.CheckerColor checkerColor)
+	{
+		List<Checker> checkersOnBoard = new List<Checker>();
+
+		foreach (List<Tile> row in boardList)
+		{
+			foreach (Tile tile in row)
+			{
+				if (TileIsNotWhite(tile))
+				{
+					if (tile.GetChecker != null)
+					{
+						Checker checkerOnTile = tile.GetChecker;
+						if (checkerOnTile.GetCheckerColor == checkerColor)
+						{
+							checkersOnBoard.Add(checkerOnTile);
+						}
+					}
+				}
+			}
+		}
+
+		return checkersOnBoard;
 	}
 
 	public List<List<Tile>> GetBoardList
@@ -106,6 +252,9 @@ public class Board : MonoBehaviour
 	{
 		Destroy(boardList[y][x].GetCheckerObject);
 		boardList[y][x].NullCheckerObject();
+
+		UpdateCheckerCount();
+		CheckerCountWin();
 	}
 
 	public bool IsValidMove(Tile currentTile, Tile newTile)
@@ -375,5 +524,10 @@ public class Board : MonoBehaviour
 
 		(int, int) tilePosition = FindTilePosition(tileObject.GetComponent<Tile>());
 		Destroy(boardList[tilePosition.Item1][tilePosition.Item2].GetComponentInChildren<Checker>().gameObject);
+	}
+
+	public GameObject GetCheckersWinCanvas
+	{
+		get { return checkersWinCanvas; }
 	}
 }

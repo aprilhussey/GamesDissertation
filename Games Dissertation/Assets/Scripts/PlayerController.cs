@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
 	private GameObject whiteOrBlackCanvas;
 	private GameObject waitingForRoomOwnerCanvas;
+	private GameObject checkersWinCanvas;
 
 	void Awake()
     {
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
 		whiteOrBlackCanvas = FindAnyObjectByType<PlayerSpawner>().GetWhiteOrBlackCanvas;
 		waitingForRoomOwnerCanvas = FindAnyObjectByType<PlayerSpawner>().GetWaitingForRoomOwnerCanvas;
+		checkersWinCanvas = board.GetCheckersWinCanvas;
 	}
 
 	void Start()
@@ -135,7 +137,8 @@ public class PlayerController : MonoBehaviour
 	private void OnPress(InputAction.CallbackContext context)
     {
 		if (!photonView.IsMine) return;
-		if (whiteOrBlackCanvas.activeInHierarchy || waitingForRoomOwnerCanvas.activeInHierarchy) return;
+		if (whiteOrBlackCanvas.activeInHierarchy || waitingForRoomOwnerCanvas.activeInHierarchy 
+			|| checkersWinCanvas.activeInHierarchy) return;
 
 		screenPosition = playerActionMap["ScreenPosition"].ReadValue<Vector2>();
 		//Debug.Log($"Screen position: {screenPosition}");
@@ -157,13 +160,13 @@ public class PlayerController : MonoBehaviour
 						currentTile = hitTile;
 						checkerObjectToMove = currentTile.GetComponentInChildren<Checker>().gameObject;
 
-						board.HighlightChecker(currentTile.GetComponent<Tile>());
+						board.HighlightChecker(currentTile);
 
 						foreach (List<Tile> row in board.GetBoardList)
 						{
 							foreach (Tile tile in row)
 							{
-								if (board.IsValidMove(currentTile.GetComponent<Tile>(), tile))
+								if (board.IsValidMove(currentTile, tile))
 								{
 									board.HighlightBoardTile(tile);
 								}
