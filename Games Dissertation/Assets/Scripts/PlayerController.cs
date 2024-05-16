@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
 	private GameObject waitingForRoomOwnerCanvas;
 	private GameObject checkersWinCanvas;
 
+	private TurnManager turnManager;
+
 	void Awake()
     {
 		// Photon
@@ -75,9 +77,11 @@ public class PlayerController : MonoBehaviour
 
 		playerCamera.transform.rotation = Quaternion.Euler(xAngle, yAngle, zAngle);
 
-		whiteOrBlackCanvas = FindAnyObjectByType<PlayerSpawner>().GetWhiteOrBlackCanvas;
-		waitingForRoomOwnerCanvas = FindAnyObjectByType<PlayerSpawner>().GetWaitingForRoomOwnerCanvas;
+		whiteOrBlackCanvas = FindObjectOfType<PlayerSpawner>().GetWhiteOrBlackCanvas;
+		waitingForRoomOwnerCanvas = FindObjectOfType<PlayerSpawner>().GetWaitingForRoomOwnerCanvas;
 		checkersWinCanvas = board.GetCheckersWinCanvas;
+
+		turnManager = FindObjectOfType<TurnManager>();
 	}
 
 	void Start()
@@ -139,6 +143,8 @@ public class PlayerController : MonoBehaviour
 		if (!photonView.IsMine) return;
 		if (whiteOrBlackCanvas.activeInHierarchy || waitingForRoomOwnerCanvas.activeInHierarchy 
 			|| checkersWinCanvas.activeInHierarchy) return;
+
+		if (turnManager.currentPlayer != playerCheckerColor) return;
 
 		screenPosition = playerActionMap["ScreenPosition"].ReadValue<Vector2>();
 		//Debug.Log($"Screen position: {screenPosition}");
@@ -216,6 +222,8 @@ public class PlayerController : MonoBehaviour
 			{
 				ResetVariables();
 			}
+
+			turnManager.NextTurn();
 		}
 	}
 
