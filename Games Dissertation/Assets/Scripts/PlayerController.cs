@@ -155,24 +155,7 @@ public class PlayerController : MonoBehaviour
 
 				if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
 				{
-					if (hitTile.GetComponentInChildren<Checker>().GetCheckerColor == playerCheckerColor)
-					{
-						currentTile = hitTile;
-						checkerObjectToMove = currentTile.GetComponentInChildren<Checker>().gameObject;
-
-						board.HighlightChecker(currentTile);
-
-						foreach (List<Tile> row in board.GetBoardList)
-						{
-							foreach (Tile tile in row)
-							{
-								if (board.IsValidMove(currentTile, tile))
-								{
-									board.HighlightBoardTile(tile);
-								}
-							}
-						}
-					}
+					FindValidMovesForChecker(hitTile);
 				}
 				else if (hitTile == currentTile && checkerObjectToMove != null)
 				{
@@ -180,31 +163,58 @@ public class PlayerController : MonoBehaviour
 				}
 				else if (hitTile != null && checkerObjectToMove != null)
 				{
-					tileToMoveTo = hitTile;
+					MoveCheckerIfTileHighlighted(hitTile);
+				}
+			}
+		}
+	}
 
-					if (board.BoardTileIsHighlighted(tileToMoveTo))
+	private void FindValidMovesForChecker(Tile hitTile)
+	{
+		if (hitTile.GetComponentInChildren<Checker>().GetCheckerColor == playerCheckerColor)
+		{
+			currentTile = hitTile;
+			checkerObjectToMove = currentTile.GetComponentInChildren<Checker>().gameObject;
+
+			board.HighlightChecker(currentTile);
+
+			foreach (List<Tile> row in board.GetBoardList)
+			{
+				foreach (Tile tile in row)
+				{
+					if (board.IsValidMove(currentTile, tile))
 					{
-						board.MoveCheckerWithTiles(currentTile, tileToMoveTo);
-						board.HoppedChecker(currentTile, tileToMoveTo);
-
-						if (board.CheckerReachedOtherSideOfBoard(currentTile, tileToMoveTo))
-						{
-							if (!currentTile.GetComponentInChildren<Checker>().King)
-							{
-									board.MakeCheckerKing(currentTile, tileToMoveTo);
-									ResetVariables();
-							}
-							else
-							{
-								ResetVariables();
-							}
-						}
-						else
-						{
-							ResetVariables();
-						}
+						board.HighlightBoardTile(tile);
 					}
 				}
+			}
+		}
+	}
+
+	private void MoveCheckerIfTileHighlighted(Tile hitTile)
+	{
+		tileToMoveTo = hitTile;
+
+		if (board.BoardTileIsHighlighted(tileToMoveTo))
+		{
+			board.MoveCheckerWithTiles(currentTile, tileToMoveTo);
+			board.HoppedChecker(currentTile, tileToMoveTo);
+
+			if (board.CheckerReachedOtherSideOfBoard(currentTile, tileToMoveTo))
+			{
+				if (!currentTile.GetComponentInChildren<Checker>().King)
+				{
+					board.MakeCheckerKing(currentTile, tileToMoveTo);
+					ResetVariables();
+				}
+				else
+				{
+					ResetVariables();
+				}
+			}
+			else
+			{
+				ResetVariables();
 			}
 		}
 	}
