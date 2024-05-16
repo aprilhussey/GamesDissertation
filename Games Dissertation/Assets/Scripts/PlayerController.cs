@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
 	private Board board;
 
 	// Moving checkers
-	private GameObject currentTileObject;
+	private Tile currentTile;
 	private GameObject checkerObjectToMove;
 
-	private GameObject tileObjectToMoveTo;
+	private Tile tileToMoveTo;
 
 	[Header("Camera Settings")]
 	[SerializeField]
@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private Checker.CheckerColor playerCheckerColor;
 
+	private GameObject whiteOrBlackCanvas;
+	private GameObject waitingForRoomOwnerCanvas;
+
 	void Awake()
     {
 		// Photon
@@ -70,6 +73,9 @@ public class PlayerController : MonoBehaviour
 		zAngle = playerCamera.transform.rotation.eulerAngles.z;
 
 		playerCamera.transform.rotation = Quaternion.Euler(xAngle, yAngle, zAngle);
+
+		whiteOrBlackCanvas = FindAnyObjectByType<PlayerSpawner>().GetWhiteOrBlackCanvas;
+		waitingForRoomOwnerCanvas = FindAnyObjectByType<PlayerSpawner>().GetWaitingForRoomOwnerCanvas;
 	}
 
 	void Start()
@@ -129,6 +135,7 @@ public class PlayerController : MonoBehaviour
 	private void OnPress(InputAction.CallbackContext context)
     {
 		if (!photonView.IsMine) return;
+		if (whiteOrBlackCanvas.activeInHierarchy || waitingForRoomOwnerCanvas.activeInHierarchy) return;
 
 		screenPosition = playerActionMap["ScreenPosition"].ReadValue<Vector2>();
 		//Debug.Log($"Screen position: {screenPosition}");
@@ -140,23 +147,23 @@ public class PlayerController : MonoBehaviour
 		{
 			if (hit.transform.GetComponentInParent<Tile>() != null)
 			{
-				GameObject hitTile = hit.transform.GetComponentInParent<Tile>().gameObject;
-				//Debug.Log($"Raycast hit: {hitTile.transform.name}");
+				Tile hitTile = hit.transform.GetComponentInParent<Tile>();
+				Debug.Log($"Raycast hit: {hitTile.transform.name}, {board.FindTilePosition(hitTile)}");
 
 				if (hitTile != null && checkerObjectToMove == null && hitTile.GetComponentInChildren<Checker>())
 				{
 					if (hitTile.GetComponentInChildren<Checker>().GetCheckerColor == playerCheckerColor)
 					{
-						currentTileObject = hitTile;
-						checkerObjectToMove = currentTileObject.GetComponentInChildren<Checker>().gameObject;
+						currentTile = hitTile;
+						checkerObjectToMove = currentTile.GetComponentInChildren<Checker>().gameObject;
 
-						board.HighlightChecker(currentTileObject.GetComponent<Tile>());
+						board.HighlightChecker(currentTile.GetComponent<Tile>());
 
 						foreach (List<Tile> row in board.GetBoardList)
 						{
 							foreach (Tile tile in row)
 							{
-								if (board.IsValidMove(currentTileObject.GetComponent<Tile>(), tile))
+								if (board.IsValidMove(currentTile.GetComponent<Tile>(), tile))
 								{
 									board.HighlightBoardTile(tile);
 								}
@@ -164,18 +171,26 @@ public class PlayerController : MonoBehaviour
 						}
 					}
 				}
-				else if (hitTile == currentTileObject && checkerObjectToMove != null)
+				else if (hitTile == currentTile && checkerObjectToMove != null)
 				{
 					ResetVariables();
 				}
 				else if (hitTile != null && checkerObjectToMove != null)
 				{
-					tileObjectToMoveTo = hitTile;
+					tileToMoveTo = hitTile;
 
-					if (board.BoardTileIsHighlighted(tileObjectToMoveTo.GetComponent<Tile>()))
+					if (board.BoardTileIsHighlighted(tileToMoveTo))
 					{
-						board.MoveCheckerWithTiles(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
-						board.HoppedChecker(currentTileObject.GetComponent<Tile>(), tileObjectToMoveTo.GetComponent<Tile>());
+						board.MoveCheckerWithTiles(currentTile, tileToMoveTo);
+						board.HoppedChecker(currentTile, tileToMoveTo);
+
+						if (!tileToMoveTo.GetChecker.King)
+						{
+							if (board.CheckerReachedOtherSideOfBoard(tileToMoveTo))
+							{
+								board.MakeCheckerKing(tileToMoveTo);
+							}
+						}
 
 						ResetVariables();
 					}
@@ -186,9 +201,9 @@ public class PlayerController : MonoBehaviour
 
 	private void ResetVariables()
 	{
-		currentTileObject = null;
+		currentTile = null;
 		checkerObjectToMove = null;
-		tileObjectToMoveTo = null;
+		tileToMoveTo = null;
 
 		board.RemoveHighlightFromBoardTiles();
 		board.RemoveHighlightFromChecker();

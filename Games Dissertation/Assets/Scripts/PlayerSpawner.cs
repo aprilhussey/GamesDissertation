@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static Checker;
 
 public class PlayerSpawner : MonoBehaviourPunCallbacks
 {
@@ -71,5 +72,15 @@ public class PlayerSpawner : MonoBehaviourPunCallbacks
 		{
 			waitingForRoomOwnerCanvas.SetActive(false);
 		}
+	}
+
+	public GameObject GetWhiteOrBlackCanvas
+	{
+		get { return whiteOrBlackCanvas; }
+	}
+
+	public GameObject GetWaitingForRoomOwnerCanvas
+	{
+		get { return waitingForRoomOwnerCanvas; }
 	}
 }

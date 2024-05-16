@@ -9,8 +9,10 @@ public class Tile : MonoBehaviour
 	[HideInInspector]
 	public PhotonView photonView;
 
-    private GameObject boardTileObject;
-    private GameObject checkerObject;
+    private BoardTile boardTile;
+
+	private Checker checker;
+	private GameObject checkerObject;
 
 	private void Awake()
 	{
@@ -19,22 +21,28 @@ public class Tile : MonoBehaviour
 
 		if (this.GetComponentInChildren<BoardTile>())
 		{
-			boardTileObject = this.GetComponentInChildren<BoardTile>().gameObject;
+			boardTile = this.GetComponentInChildren<BoardTile>();
 		}
 
-		SetCheckerObject();
+		SetCheckerAndCheckerObject();
 	}
 
-	public GameObject GetCheckerObject()
+	public Checker GetChecker
 	{
-		return checkerObject;
+		get { return checker; }
 	}
 
-	public void SetCheckerObject()
+	public GameObject GetCheckerObject
+	{
+		get { return checkerObject; }
+	}
+
+	public void SetCheckerAndCheckerObject()
 	{
 		if (this.GetComponentInChildren<Checker>())
 		{
-			checkerObject = this.GetComponentInChildren<Checker>().gameObject;
+			checker = this.GetComponentInChildren<Checker>();
+			checkerObject = checker.gameObject;
 		}
 	}
 
@@ -42,6 +50,7 @@ public class Tile : MonoBehaviour
 	{
 		if (checkerObject != null)
 		{
+			checker = null;
 			checkerObject = null;
 		}
 	}

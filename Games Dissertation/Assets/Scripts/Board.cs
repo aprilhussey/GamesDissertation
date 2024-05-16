@@ -24,6 +24,12 @@ public class Board : MonoBehaviour
 	[SerializeField]
 	private Material highlight;
 
+	[Header("King Checkers")]
+	[SerializeField]
+	private GameObject kingCheckerBlackObject;
+	[SerializeField]
+	private GameObject kingCheckerWhiteObject;
+
 	void Awake()
 	{
 		// Photon
@@ -35,7 +41,7 @@ public class Board : MonoBehaviour
 
 			if (row != null)
 			{
-				boardList.Insert(0, row.GetRow);	// Inserts new row at the beginning of the list
+				boardList.Insert(0, row.GetRow);    // Inserts new row at the beginning of the list
 			}
 		}
 	}
@@ -77,14 +83,14 @@ public class Board : MonoBehaviour
 	public void MoveChecker(int yOriginalPosition, int xOriginalPosition, int yNewPosition, int xNewPosition)
 	{
 		GameObject currentTile = boardList[yOriginalPosition][xOriginalPosition].gameObject;
-		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject();
+		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject;
 		GameObject tileToMoveTo = boardList[yNewPosition][xNewPosition].gameObject;
 
 		checkerToMove.transform.SetParent(tileToMoveTo.transform);
 		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
 
 		currentTile.GetComponent<Tile>().NullCheckerObject();
-		tileToMoveTo.GetComponent<Tile>().SetCheckerObject();
+		tileToMoveTo.GetComponent<Tile>().SetCheckerAndCheckerObject();
 	}
 
 	public void SyncRemoveChecker((int, int) position)
@@ -95,7 +101,7 @@ public class Board : MonoBehaviour
 	[PunRPC]
 	public void RemoveChecker(int y, int x)
 	{
-		Destroy(boardList[y][x].GetCheckerObject());
+		Destroy(boardList[y][x].GetCheckerObject);
 		boardList[y][x].NullCheckerObject();
 	}
 
@@ -300,4 +306,65 @@ public class Board : MonoBehaviour
 			}
 		}
 	}
+
+	public bool CheckerReachedOtherSideOfBoard(Tile tile)
+	{
+		Checker checkerOnTile = tile.GetChecker;
+
+		if (checkerOnTile != null)
+		{
+			switch (checkerOnTile.GetCheckerColor)
+			{
+				case Checker.CheckerColor.Black:
+					for (int i = 0; i <= 7; i++)
+					{
+						if (FindTilePosition(tile) == (0, i)) // White side end tiles
+						{
+							return true;
+						}
+					}
+					return false;
+				case Checker.CheckerColor.White:
+					for (int i = 0; i <= 7; i++)
+					{
+						if (FindTilePosition(tile) == (7, i))   // Black side end tiles
+						{
+							return true;
+						}
+					}
+					return false;
+			}
+		}
+		return false;
+	}
+
+	public void MakeCheckerKing(Tile tile)
+	{
+		Checker checker = tile.GetChecker;
+
+		SyncRemoveChecker(FindTilePosition(tile));
+
+		switch (checker.GetCheckerColor)
+		{
+			case Checker.CheckerColor.Black:
+				GameObject newKingCheckerBlackObject = PhotonNetwork.Instantiate(kingCheckerBlackObject.name, tile.gameObject.transform.position, tile.gameObject.transform.rotation);
+				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, tile.gameObject, newKingCheckerBlackObject);
+				break;
+			case Checker.CheckerColor.White:
+				GameObject newKingCheckerWhiteObject = PhotonNetwork.Instantiate(kingCheckerWhiteObject.name, tile.gameObject.transform.position, tile.gameObject.transform.rotation);
+				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, tile.gameObject, newKingCheckerWhiteObject);
+				break;
+		}
+
+		tile.NullCheckerObject();
+		tile.SetCheckerAndCheckerObject();
+	}
+
+	[PunRPC]
+	public void SetTileObjectAsParentOfCheckerObject(GameObject tileObject, GameObject checkerObject)
+	{
+		checkerObject.transform.SetParent(tileObject.transform);
+		checkerObject.transform.localPosition = new Vector3(0, checkerObject.transform.position.y, 0);
+	}
+
 }

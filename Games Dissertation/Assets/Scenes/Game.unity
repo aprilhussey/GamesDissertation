@@ -4032,6 +4032,8 @@ MonoBehaviour:
   chessFiguresBlack: {fileID: 2100000, guid: e181ad0b6f6c64a459c1a26119b14c2c, type: 2}
   chessFiguresWhite: {fileID: 2100000, guid: c0165960283e5604ca3ddec04c50a367, type: 2}
   highlight: {fileID: 2100000, guid: 6543d139d036e774db68ce7149fb7791, type: 2}
+  kingCheckerBlackObject: {fileID: 4937582996643905273, guid: 79c7162cd5cbf2047acca1030a2c8715, type: 3}
+  kingCheckerWhiteObject: {fileID: 6141767792164599645, guid: 3c366507ec6f79340b5bd2e97b136abc, type: 3}
 --- !u!114 &672155402
 MonoBehaviour:
   m_ObjectHideFlags: 0
