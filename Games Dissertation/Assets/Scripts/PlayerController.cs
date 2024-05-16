@@ -184,15 +184,22 @@ public class PlayerController : MonoBehaviour
 						board.MoveCheckerWithTiles(currentTile, tileToMoveTo);
 						board.HoppedChecker(currentTile, tileToMoveTo);
 
-						if (!tileToMoveTo.GetChecker.King)
+						if (board.CheckerReachedOtherSideOfBoard(currentTile, tileToMoveTo))
 						{
-							if (board.CheckerReachedOtherSideOfBoard(tileToMoveTo))
+							if (!currentTile.GetComponentInChildren<Checker>().King)
 							{
-								board.MakeCheckerKing(tileToMoveTo);
+									board.MakeCheckerKing(currentTile, tileToMoveTo);
+									ResetVariables();
+							}
+							else
+							{
+								ResetVariables();
 							}
 						}
-
-						ResetVariables();
+						else
+						{
+							ResetVariables();
+						}
 					}
 				}
 			}

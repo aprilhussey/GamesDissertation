@@ -11,7 +11,7 @@ public class Tile : MonoBehaviour
 
     private BoardTile boardTile;
 
-	private Checker checker;
+	[SerializeField]
 	private GameObject checkerObject;
 
 	private void Awake()
@@ -27,11 +27,6 @@ public class Tile : MonoBehaviour
 		SetCheckerAndCheckerObject();
 	}
 
-	public Checker GetChecker
-	{
-		get { return checker; }
-	}
-
 	public GameObject GetCheckerObject
 	{
 		get { return checkerObject; }
@@ -41,17 +36,12 @@ public class Tile : MonoBehaviour
 	{
 		if (this.GetComponentInChildren<Checker>())
 		{
-			checker = this.GetComponentInChildren<Checker>();
-			checkerObject = checker.gameObject;
+			checkerObject = this.GetComponentInChildren<Checker>().gameObject;
 		}
 	}
 
-	public void NullCheckerObject()
+	public void NullCheckerAndCheckerObject()
 	{
-		if (checkerObject != null)
-		{
-			checker = null;
-			checkerObject = null;
-		}
+		checkerObject = null;
 	}
 }

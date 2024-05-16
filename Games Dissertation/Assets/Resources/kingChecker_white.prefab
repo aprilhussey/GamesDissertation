@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0221dd65b4a1a904abe2f7635607968d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
   checkerColor: 1
   king: 1
 --- !u!114 &7927695454696923402

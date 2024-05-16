@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -76,21 +77,21 @@ public class Board : MonoBehaviour
 
 	public void SyncMoveChecker((int, int) originalPosition, (int, int) newPosition)
 	{
-		photonView.RPC("MoveChecker", RpcTarget.All, originalPosition.Item1, originalPosition.Item2, newPosition.Item1, newPosition.Item2);
+		photonView.RPC("MoveChecker", RpcTarget.AllBufferedViaServer, originalPosition.Item1, originalPosition.Item2, newPosition.Item1, newPosition.Item2);
 	}
 
 	[PunRPC]
 	public void MoveChecker(int yOriginalPosition, int xOriginalPosition, int yNewPosition, int xNewPosition)
 	{
-		GameObject currentTile = boardList[yOriginalPosition][xOriginalPosition].gameObject;
-		GameObject checkerToMove = currentTile.GetComponent<Tile>().GetCheckerObject;
-		GameObject tileToMoveTo = boardList[yNewPosition][xNewPosition].gameObject;
+		Tile currentTile = boardList[yOriginalPosition][xOriginalPosition];
+		Tile tileToMoveTo = boardList[yNewPosition][xNewPosition];
+		GameObject checkerToMove = currentTile.GetCheckerObject;
 
-		checkerToMove.transform.SetParent(tileToMoveTo.transform);
+		checkerToMove.transform.SetParent(tileToMoveTo.gameObject.transform);
 		checkerToMove.transform.localPosition = new Vector3(0, checkerToMove.transform.position.y, 0);
 
-		currentTile.GetComponent<Tile>().NullCheckerObject();
-		tileToMoveTo.GetComponent<Tile>().SetCheckerAndCheckerObject();
+		currentTile.NullCheckerAndCheckerObject();
+		tileToMoveTo.SetCheckerAndCheckerObject();
 	}
 
 	public void SyncRemoveChecker((int, int) position)
@@ -102,7 +103,7 @@ public class Board : MonoBehaviour
 	public void RemoveChecker(int y, int x)
 	{
 		Destroy(boardList[y][x].GetCheckerObject);
-		boardList[y][x].NullCheckerObject();
+		boardList[y][x].NullCheckerAndCheckerObject();
 	}
 
 	public bool IsValidMove(Tile currentTile, Tile newTile)
@@ -307,9 +308,9 @@ public class Board : MonoBehaviour
 		}
 	}
 
-	public bool CheckerReachedOtherSideOfBoard(Tile tile)
+	public bool CheckerReachedOtherSideOfBoard(Tile currentTile, Tile newTile)
 	{
-		Checker checkerOnTile = tile.GetChecker;
+		Checker checkerOnTile = currentTile.GetComponentInChildren<Checker>();
 
 		if (checkerOnTile != null)
 		{
@@ -318,7 +319,7 @@ public class Board : MonoBehaviour
 				case Checker.CheckerColor.Black:
 					for (int i = 0; i <= 7; i++)
 					{
-						if (FindTilePosition(tile) == (0, i)) // White side end tiles
+						if (FindTilePosition(newTile) == (0, i)) // White side end tiles
 						{
 							return true;
 						}
@@ -327,7 +328,7 @@ public class Board : MonoBehaviour
 				case Checker.CheckerColor.White:
 					for (int i = 0; i <= 7; i++)
 					{
-						if (FindTilePosition(tile) == (7, i))   // Black side end tiles
+						if (FindTilePosition(newTile) == (7, i))   // Black side end tiles
 						{
 							return true;
 						}
@@ -338,33 +339,36 @@ public class Board : MonoBehaviour
 		return false;
 	}
 
-	public void MakeCheckerKing(Tile tile)
+	public void MakeCheckerKing(Tile currentTile, Tile newTile)
 	{
-		Checker checker = tile.GetChecker;
+		Checker checker = currentTile.GetComponentInChildren<Checker>();
 
-		SyncRemoveChecker(FindTilePosition(tile));
+		SyncRemoveChecker(FindTilePosition(currentTile));
 
 		switch (checker.GetCheckerColor)
 		{
 			case Checker.CheckerColor.Black:
-				GameObject newKingCheckerBlackObject = PhotonNetwork.Instantiate(kingCheckerBlackObject.name, tile.gameObject.transform.position, tile.gameObject.transform.rotation);
-				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, tile.gameObject, newKingCheckerBlackObject);
+				GameObject newKingCheckerBlackObject = PhotonNetwork.Instantiate(kingCheckerBlackObject.name, newTile.gameObject.transform.position, newTile.gameObject.transform.rotation);
+				Checker newKingCheckerBlack = newKingCheckerBlackObject.GetComponent<Checker>();
+				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, newTile.photonView.ViewID, newKingCheckerBlack.photonView.ViewID);
 				break;
 			case Checker.CheckerColor.White:
-				GameObject newKingCheckerWhiteObject = PhotonNetwork.Instantiate(kingCheckerWhiteObject.name, tile.gameObject.transform.position, tile.gameObject.transform.rotation);
-				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, tile.gameObject, newKingCheckerWhiteObject);
+				GameObject newKingCheckerWhiteObject = PhotonNetwork.Instantiate(kingCheckerWhiteObject.name, newTile.gameObject.transform.position, newTile.gameObject.transform.rotation);
+				Checker newKingCheckerWhite = newKingCheckerWhiteObject.GetComponent<Checker>();
+				photonView.RPC("SetTileObjectAsParentOfCheckerObject", RpcTarget.AllBufferedViaServer, newTile.photonView.ViewID, newKingCheckerWhite.photonView.ViewID);
 				break;
 		}
-
-		tile.NullCheckerObject();
-		tile.SetCheckerAndCheckerObject();
 	}
 
 	[PunRPC]
-	public void SetTileObjectAsParentOfCheckerObject(GameObject tileObject, GameObject checkerObject)
+	public void SetTileObjectAsParentOfCheckerObject(int tileObjectViewID, int checkerObjectViewID)
 	{
+		GameObject tileObject = PhotonView.Find(tileObjectViewID).gameObject;
+		GameObject checkerObject = PhotonView.Find(checkerObjectViewID).gameObject;
+
 		checkerObject.transform.SetParent(tileObject.transform);
 		checkerObject.transform.localPosition = new Vector3(0, checkerObject.transform.position.y, 0);
-	}
 
+		tileObject.GetComponent<Tile>().SetCheckerAndCheckerObject();
+	}
 }
