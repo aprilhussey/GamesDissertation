@@ -423,12 +423,29 @@ public class Board : MonoBehaviour
 	public void HighlightChecker(Tile tile)
 	{
 		Checker checker = tile.GetComponentInChildren<Checker>();
-		Renderer renderer = checker.GetComponent<Renderer>();
 
-		if (renderer != null)
+		if (!checker.King)
+		{
+			Renderer renderer = checker.GetComponent<Renderer>();
+
+			if (renderer != null)
+			{
+				checker.Highlighted = true;
+				renderer.material = highlight;
+			}
+		}
+		else
 		{
 			checker.Highlighted = true;
-			renderer.material = highlight;
+
+			Renderer[] renderers = checker.GetComponentsInChildren<Renderer>();
+			if (renderers != null)
+			{
+				foreach (Renderer renderer in renderers)
+				{
+					renderer.material = highlight;
+				}
+			}
 		}
 	}
 
@@ -440,19 +457,42 @@ public class Board : MonoBehaviour
 		{
 			if (checker.Highlighted)
 			{
-				Renderer renderer = checker.GetComponent<Renderer>();
+				if (!checker.King)
+				{
+					Renderer renderer = checker.GetComponent<Renderer>();
 
-				if (renderer != null)
+					if (renderer != null)
+					{
+						checker.Highlighted = false;
+
+						if (checker.GetCheckerColor == Checker.CheckerColor.Black)
+						{
+							renderer.material = chessFiguresBlack;
+						}
+						else if (checker.GetCheckerColor == Checker.CheckerColor.White)
+						{
+							renderer.material = chessFiguresWhite;
+						}
+					}
+				}
+				else
 				{
 					checker.Highlighted = false;
 
-					if (checker.GetCheckerColor == Checker.CheckerColor.Black)
+					Renderer[] renderers = checker.GetComponentsInChildren<Renderer>();
+					if (renderers != null)
 					{
-						renderer.material = chessFiguresBlack;
-					}
-					else if (checker.GetCheckerColor == Checker.CheckerColor.White)
-					{
-						renderer.material = chessFiguresWhite;
+						foreach (Renderer renderer in renderers)
+						{
+							if (checker.GetCheckerColor == Checker.CheckerColor.Black)
+							{
+								renderer.material = chessFiguresBlack;
+							}
+							else if (checker.GetCheckerColor == Checker.CheckerColor.White)
+							{
+								renderer.material = chessFiguresWhite;
+							}
+						}
 					}
 				}
 			}
